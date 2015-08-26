@@ -1,0 +1,623 @@
+
+/* commented backslash hack v2 \*/
+html, body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: small;
+} 
+/* end hack */ 
+/*add by jack*/
+h4{margin:0 0 18px;border-bottom:1px solid #dad9da}
+hr {
+	height: 1px;
+	border: 1px solid #dad9da;
+	margin:0 0 0 0;
+}
+/*----------------------------*/
+img {
+	border: 0px;
+}
+
+body {
+	color: #000000;
+	background-color: #FFFFFF;
+	/*Add by Jack*/
+	/*text-align: center;
+	/*----------------*/
+}
+
+
+#RootConatainer 
+{
+    text-align: left;
+	min-height: 100%;
+	margin-left: 160px;
+	margin-right: 17px;
+	color: #000000;
+	/*add by jack*/
+	/*width: 620px;
+	/*------------*/
+    z-index: 1
+    
+}
+
+
+.horizontal ul li {
+	display: inline;
+}
+/* ------------------------------------------------------------------------     Basic Linking    -----------------------------------------------------------------*/
+/*
+a {
+	text-decoration: none;
+	color: #910000;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #910000;
+}
+*/
+.NoStyle 
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------------------   Left side Nav   -----------------------------------------------------------------*/
+
+#leftNav {
+	position: relative;/*ie needs this to show float */
+	Height: 609px;
+	width: 160px;
+	float: left;
+	margin-left: -160px;
+	background: url(images/BG.jpg) repeat-x white;
+	z-index: 1;
+}
+
+#shadowright 
+{
+
+	
+	Height: 609px;
+	width: 17px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background:url(images/LeftSideEdgeBG.jpg);
+	background-repeat: no-repeat;
+
+}
+	
+	
+#Logo
+{
+	/*background-image:url(images/UofCLogo.gif);*/
+	position: absolute;
+	right: 24px;
+	top: 15px;
+	width: 96px;
+	height: 100px;
+	z-index: 2;
+}
+
+/* ------------------------------------------------------------------------   Left Nav Linking   -----------------------------------------------------------------*/
+.leftLinks {
+	position: absolute;
+	Margin: 150px 0px 0px 0px;
+	text-align: Right;
+	z-index: 2;
+	font-size: 10pt;
+}
+
+.links ul {
+	padding: 0px;
+	margin: 0px; /* remove the default UL-element margin and padding */
+}
+
+.links ul li {
+	width: 155px;
+	list-style-type: none;
+	height: 0px;
+	padding-right: 10px;
+	padding-bottom: 8px;
+	margin: 0px;
+}  
+
+div[class].links ul li {
+	height: auto;
+	margin-top: 3px;
+}
+
+
+.horizontal ul li {
+	display: inline;
+}
+
+.links a {
+	background: url(images/YellowBar.jpg) no-repeat 147px 9px;
+	Padding-right: 19px;
+	padding-top: 5px;
+	padding-bottom:3px;
+	margin:-4px;
+	font-size: 10pt;
+	text-decoration: none;
+	color: white;
+	display: block;
+}
+
+.links a:hover {
+	background-color: #650101;
+	color: white;
+	text-decoration: none;
+}
+
+#ClientData {
+	position: absolute;
+	right: 21px;
+	top: 330px;
+	text-align: Right;
+}
+
+#ClientData_Welcome {
+	color: #e5b3b3 ;
+	padding-bottom: 2px;
+}
+
+#ClientData_name {
+	color: #bcbaba ;
+	padding-bottom: 2px;
+}
+#ClientData_Role {
+	color: #e5b3b3 ;
+	padding-bottom: 2px;
+}
+
+#ClientData_RoleName {
+	color: #bcbaba ;
+	padding-bottom: 2px;
+}
+
+
+
+/* ------------------------------------------------------------------------   Content   -----------------------------------------------------------------*/
+#centrecontent {
+	position: relative;
+	background: url(images/ContentBG.jpg) repeat-x white;
+	width: 100%;
+	float: left;
+	z-index: 0;
+	min-height: 100%
+}
+
+#innercenter 
+{
+	padding:30px 30px 0 30px;
+	z-index: 0;
+}
+
+/* ------------------------------------------------------------------------   content top banners   -----------------------------------------------------------------*/
+/* new small banner */
+/*#smallRootBanner {
+	height: 61px;
+}
+*/
+#smallleftbanner {
+	position: relative;/*ie needs this to show float */
+	Height: 61px;
+	width: 9px;
+	float: left;
+	background: url(images/left.gif);
+	background-repeat: no-repeat;
+	z-index: 2;
+}
+
+#smallbannerMiddle {
+	background: url(images/middle.gif) repeat-x ;
+	text-align:left;
+	Height: 61px;
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	Padding-top: 12px;
+	z-index: 2;
+	margin-right: 9px;
+	margin-left: 9px;
+}
+
+#smallrightbanner {
+	position: relative;
+	width: 9px;
+	float: right;
+	background: url(images/right.gif);
+	background-repeat: no-repeat;
+	Height: 61px;
+	z-index: 2;
+}
+
+#RootBanner {
+	color: #000000;
+	height: 91px;
+	background: url(images/ContentBannerMiddle.jpg) repeat-x white;
+}
+
+#leftbanner {
+	position: relative;/*ie needs this to show float */
+	Height: 91px;
+	width: 282px;
+	float: left;
+	background: url(images/ContentBannerLeft.jpg) repeat-x white;
+	z-index: 2;
+}
+
+#bannerMiddle {
+	background: url(images/ContentBannerMiddle.jpg) repeat-x ;
+	Height: 91px;
+	z-index: 1;
+}
+
+#rightbanner {
+	position: relative;
+	width: 245px;
+	float: right;
+	background: url(images/ContentBannerRight.jpg);
+	background-repeat: no-repeat;
+	Height: 91px;
+	z-index: 2;
+}
+
+
+/* -------------TV Banner  --------------*/
+#rightbannerCable_TV_Sevice {
+	position: relative;
+	width: 245px;
+	float: right;
+	background: url(images/TVImage.jpg);
+	background-repeat: no-repeat;
+	Height: 91px;
+	z-index: 2;
+}
+
+#leftbannerCable_TV_Sevice {
+	position: relative;/*ie needs this to show float */
+	Height: 91px;
+	width: 282px;
+	float: left;
+	background: url(images/tvBanner.jpg) repeat-x white;
+	z-index: 2;
+}
+
+/* -------------Equipment_Rental_Booking  --------------*/
+#rightbannerEquipment_Rental_Booking {
+	position: relative;
+	width: 245px;
+	float: right;
+	background: url(images/equipmentImage.jpg);
+	background-repeat: no-repeat;
+	Height: 91px;
+	z-index: 2;
+}
+
+#leftbannerEquipment_Rental_Booking {
+	position: relative;/*ie needs this to show float */
+	Height: 91px;
+	width: 282px;
+	float: left;
+	background: url(images/equipmentBanner.jpg) repeat-x white;
+	z-index: 2;
+}
+
+/* -------------Equipment_Rental_Booking  --------------*/
+#rightbannerClassroom_Equipment_Bookings {
+	position: relative;
+	width: 245px;
+	float: right;
+	background: url(images/ClassroomImage.jpg);
+	background-repeat: no-repeat;
+	Height: 91px;
+	z-index: 2;
+}
+
+#leftbannerClassroom_Equipment_Bookings{
+	position: relative;/*ie needs this to show float */
+	Height: 91px;
+	width: 282px;
+	float: left;
+	background: url(images/ClassroomIBanner.jpg) repeat-x white;
+	z-index: 2;
+}
+
+/* -------------Pending Process Work Order Banner  --------------*/
+#rightbannerProcess_Pending_WO {
+	position: relative;
+	width: 245px;
+	float: right;
+	background: url(images/ProcessPending.jpg);
+	background-repeat: no-repeat;
+	Height: 91px;
+	z-index: 2;
+}
+
+#leftbannerProcess_Pending_WO{
+	position: relative;/*ie needs this to show float */
+	Height: 91px;
+	width: 282px;
+	float: left;
+	background: url(images/ProcessPending.jpg) repeat-x white;
+	z-index: 2;
+}
+
+
+
+/* -------------Roll out Menu   --------------*/
+
+.AdminLinks {
+	position: absolute;
+	Margin: 150px 0px 0px 0px;
+	text-align: Right;
+	z-index:2;
+	font-size: 10pt;
+	
+}
+.Adminlinks a {
+	
+	background: url(images/YellowBar.jpg) no-repeat 147px 6px;
+	Padding-right: 23px;
+	padding-top: 2px;
+	padding-bottom:2px;
+	margin:-4px;
+	font-size: 10pt;
+	text-decoration: none;
+	color: #fff;
+	display: block;
+		
+}
+
+.adminlinks a:hover {
+	
+	background-color: #650101;
+	color: white;
+	text-decoration: none;
+}
+
+.AdminLinksLevelTwo{
+	display: block;
+	background-Color: #880000;
+	text-decoration: none;
+	color:#FFFFFF;
+	padding: 5px;
+	border-bottom: 1px solid #622;
+	border-left: 1px solid #833;
+	border-right: 1px solid #611;
+	border-top: 1px solid #944;
+}
+.AdminLinksLevelTwo a {
+	background-Color: #650101;
+	}
+	
+adminlinksleveltwo a:hover {
+	text-decoration: none;
+}
+	
+.AdminLinksLevelthree{
+	display: block;
+	background-Color: #880000;
+	text-decoration: none;
+	color:#FFFFFF;
+	padding: 5px;
+	border-bottom: 1px solid #622;
+	border-left: 1px solid #833;
+	border-right: 1px solid #611;
+	border-top: 1px solid #944;
+}
+
+
+/* ------------------------------------------------------------------------   App name and home and logout link  ------------------------------------------------*/
+#topcontainer {
+	Height: 28px;
+	padding-bottom: 25px;
+}
+
+#AppName {
+	position: relative;
+	float: right;
+	background: url(images/untitled.JPG);
+	background-repeat: no-repeat;
+	width: 443px;
+	height: 28px;	
+}
+
+#Linkscontainer {
+	Height: 12px;
+	padding-bottom: 25px;
+}
+
+#HomeLink {
+	background: url(images/Homeicon.gif) no-repeat 0px 12px;
+	color: #817f7f;
+	font-size: 8pt;
+	Padding-top: 10px;
+	Padding-left: 15px;
+	Padding-right: 15px;
+	position: relative;
+	float: left;
+}
+
+#logoutLink {
+	position: relative;
+	float: left;
+	background: url(images/Logout.gif) no-repeat 0px 12px;
+	color: #817f7f;
+	font-size: 8pt;
+	Padding-right: 15px;
+	padding-left: 15px;
+	Padding-top: 10px;
+}
+
+/* ------------------------------------------------------------------------   Table Formatting  -----------------------------------------------------------------*/
+
+/* add by jack */
+.GridViewStyle th
+{
+border-width: 1px;
+}
+
+
+.GridViewStyle td
+{
+    border-width: 1px; 
+	border-bottom-color:Black;
+    border-top-color: Black;
+    border-left-color:Black;
+    border-right-color:Black;
+
+}
+.GridViewStyle {
+	width: 100%;
+	border: solid 1px #e0dfdf;
+}
+/*add by jack------------------------*/
+.TableStyle1 {
+	width: 100%;
+	border: solid 1px #e0dfdf;
+}
+
+.TableStyle1 > tr > td { /*only immediate tds of TableStyle1*/
+	padding: 2px; /*cellpadding*/
+	margin: 1px; /*cellspacing*/
+}
+
+
+.TableTitle {
+	Font-size: 14px;
+	font-weight: bold;
+	text-align: Left;
+	background: url(images/TabletitleBG.jpg) repeat-x ;
+	color: #ffffff;
+	Height: 28px;
+	Padding:12px;
+}
+
+/* -------------Table style 1 ( titles on the top )  --------------*/
+.ColumnHeader {
+	Font-size: 10pt;
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #000000;
+	Height: 15px;
+}
+
+.Row1 {
+	Font-size: 10pt;
+	text-align: center;
+	background-color: #eaeaea;
+	color: #000000;
+}
+
+.Row2 {
+	Font-size: 10pt;
+	text-align: center;
+	background-color: #f1f1f1;
+	color: #000000;
+}
+
+.Row3 {
+	Font-size: 10pt;
+	text-align: center;
+	background-color: #f8f8f8;
+	color: #000000;
+}
+/* -------------Table style 2 ( titles on side  )  --------------*/
+
+.Row1_S2 {
+	Font-size: 10pt;
+	text-align: left;
+	background-color: #eaeaea;
+	color: #000000;
+}
+
+.Row2_S2 {
+	Font-size: 10pt;
+/*	text-align: left;   by jack*/
+	background-color: #f1f1f1;
+	color: #000000;
+}
+
+.Row3_S2 {
+	Font-size: 10pt;
+/*	text-align: left;  by jack */
+	background-color: #f8f8f8;
+	color: #000000;
+}
+
+.Title_on_Left {
+	font-weight: bold;
+}
+
+/* ------------------------------------------------------------------------   RightSideImage   -----------------------------------------------------------------*/
+#rightImage {
+	position: relative;
+	width: 17px;
+	float: right;
+	margin-right: -17px;
+	background: url(images/rightBg.jpg);
+	background-repeat: no-repeat;
+	Height: 609px;
+	z-index: 2;
+}
+
+
+#sumPageTitle{
+	background-image:url(Images/wideYellowBar.jpg);
+	background-repeat:no-repeat;
+	background-position: left 18px;
+	color:#B80201;
+	font-size:11pt;
+	font-weight:bold;
+	padding:15px 0px 5px 13px;
+}
+
+/* Form Buttons */
+	.btn {
+		background:#cfd1d4 url('Images/btn_base.gif') 0 0 repeat-x;
+		border-top:1px solid #000; border-right:1px solid #000; 
+		border-bottom:1px solid #000; border-left:1px solid #000;
+		cursor:pointer;
+		padding:4px 9px;
+		font-size:11px;
+		text-align:left;
+		width:auto;
+	}
+		
+	.btn:hover {color:#77797b;}
+	
+	/* specific buttons (icons) */
+	input[value~="Excel"] {
+		background-image:url('Images/btn_excel-export.gif');
+		padding-left:23px;
+		}
+
+
+#export
+{
+    float: right;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+ul li
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.headerStyle {
+	text-align:left;
+	font-weight: bold; 
+	color: white; 
+	background: #5481C4;
+	padding: 5px;
+}

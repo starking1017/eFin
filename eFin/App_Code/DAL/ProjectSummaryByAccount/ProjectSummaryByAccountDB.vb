@@ -1,0 +1,12 @@
+Namespace DAL
+    Public Class ProjectSummaryByAccountDB
+
+        Public Shared Function LoadProjectSummaryByAccountDB(ByRef DBOperation As String, ByRef SP_Name As String, ByRef arrParams As ArrayList) As DataTable
+
+            Return DAL.GenericDBOperation.GenericDataBaseOperationDB(DBOperation, SP_Name, arrParams)
+
+        End Function
+
+    End Class
+
+End Namespace

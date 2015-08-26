@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ER-eFIN-V5", "..\eFin\eFin", "{92C98E0C-82AB-4E1E-9711-E72F099DDA05}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/ER-eFIN-V5"
+		Debug.AspNetCompiler.PhysicalPath = "..\eFin\eFin\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ER-eFIN-V5\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ER-eFIN-V5"
+		Release.AspNetCompiler.PhysicalPath = "..\eFin\eFin\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ER-eFIN-V5\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1045"
+		SlnRelativePath = "..\eFin\eFin\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92C98E0C-82AB-4E1E-9711-E72F099DDA05}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{92C98E0C-82AB-4E1E-9711-E72F099DDA05}.Debug|.NET.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

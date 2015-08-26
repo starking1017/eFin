@@ -1,0 +1,67 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<%@ Register Src="Controls/Common/Banner.ascx" TagName="Banner" TagPrefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head runat="server">
+       <!--[if IE]>
+    <style type="text/css">
+    * html #RootConatainer{	height:100%;}
+    </style>
+    <![endif]-->
+        <link href="Style.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 7.]>
+    <script defer type="text/javascript" src="../../pngfix.js"></script>
+    <![endif]-->
+	<script type="text/javascript" language='javascript'>	
+		function lll()
+		{
+		    if((window.event.clientX<0) || (window.event.clientY<0))
+		    { return("Please click 'Cancel' and use the logout button to exit the application!");
+		    }
+		}
+	</script>
+    <script type="text/javascript" src="../../Jquery/jquery-1.11.3.min.js"></script>
+    <title>Untitled Page</title>
+</head>
+<body onbeforeunload="return lll();">
+    <form id="form1" runat="server">
+    <div>
+    <table width="100%" height="80%">
+    <tr>
+        <td align="center">
+            <uc2:Banner ID="Banner1" runat="server" />
+        </td>
+    </tr>
+    <tr>
+        <td height="95%" valign="top">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+        </td>
+    </tr>
+    <tr>
+        <td style="height: 56px">
+        
+       <table width="80%" align="center">
+            <tr>
+                <td align="left" width="300" style="height: 34px">
+                    <asp:Label ID="LbIdentity" runat="server" Font-Bold="True" Text="Enterprise Reporting<br/> PDR - 01"></asp:Label></td>
+                <td style="font-weight: bold; height: 34px;" align="center">
+                    If you have problems or questions, please contact Research Accounting by phone at (403) 220-5611 or by email at <a href="mailto:rtahelp@ucalgary.ca">rtahelp@ucalgary.ca</a>
+                    </td>
+                <td align="right" width="300" style="height: 34px">
+                    <asp:Label ID="lbDateTime" runat="server" Font-Bold="True" Text="Generated at<br/>Monday, June 09, 2008 10:54 AM "></asp:Label>
+                </td>
+            </tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    
+    </div>
+    </form>
+</body>
+</html>

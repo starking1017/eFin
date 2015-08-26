@@ -1,0 +1,48 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="EfinSecurity.master.vb" Inherits="EfinSecurity" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table width="100%" align="center">
+        <tr>
+            <td align="center">
+                <table style="border: 1px solid #000000; width: 80%;">
+                    <tr>
+                        <td>
+                            <table width="100%">
+                                <tr>
+                                    <td align="left">
+                                        <asp:LinkButton ID="lbtSecurity" runat="server" Font-Names="Verdana" 
+                                            Font-Size="X-Small">Project team based authority</asp:LinkButton>
+                                    </td>
+                                    <td align="center">
+                                        <asp:LinkButton ID="lbtDepartment" runat="server" Font-Names="Verdana" 
+                                            Font-Size="X-Small">Faculty/Department viewing authority</asp:LinkButton>
+                                    </td>
+                                    <td align="center">
+                                        <asp:LinkButton ID="lbtAdmin" runat="server" Font-Names="Verdana" 
+                                            Font-Size="X-Small">RA Administrator maintenance</asp:LinkButton>
+                                    </td>
+                                    <td align="center">
+                                        <asp:LinkButton ID="lbtPOI" runat="server" Font-Names="Verdana" 
+                                            Font-Size="X-Small">POI team member maintenance</asp:LinkButton>
+                                    </td>
+                                    <td align="right">
+                                        <asp:LinkButton ID="lbtReturn" runat="server" CausesValidation="False" 
+                                            CommandArgument="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" 
+                                            Font-Names="Verdana" Font-Size="X-Small">Return to project list</asp:LinkButton>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+

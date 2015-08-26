@@ -1,0 +1,58 @@
+<Interaction Type="Labeled Graphic" Title="How to Use Advanced Search Options" contentfont="Articulate" dotanimation="spin" defaultimage="false" jpegquality="80" autoplay="false" autoplayduration="5" headingfont="Articulate" navfont="Articulate" soundeffects="true" volumebutton="true" audioquality="custom" audiocustombitrate="br112Kbps" audiocustomfrequency="fq22KHz" audiocustomchannel="ccMono" navbuttons="true" forceorder="false" detectflashver="true" animation="bounce" version="2.3.1103.112" borderstyle="none">
+  <bgimage src="image1.jpg" percent="30" originalSource="imageSource1.png" width="690" height="90" />
+  <labels>
+    <label panelpos="auto" iconid="1" x="289" y="37">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="ca813577-cd88-4907-be5a-1051b1b7c30d" name="Project Status" title="" number="1" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;You can now search according to &lt;b&gt;Project Status&lt;/b&gt;.  Choose from &lt;i&gt;Active, Closed, Operationally Closed, Suspended &lt;/i&gt;or&lt;i&gt; Substantial Completion&lt;/i&gt;, as shown.  &lt;/font&gt;&lt;/p&gt;">
+          <image width="312" height="107" zoomheight="127" playbar="false" autoplay="false" zoomwidth="367" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image4.jpg" zoomimage="imageZoom4.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="1" x="212" y="53">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="985a8b77-10bd-4bc1-838f-9af898c03012" name="Department" title="" number="2" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;You can also search by &lt;b&gt;Department&lt;/b&gt;.  Depending on the security access you may have in eFIN, different department options will be displayed.&lt;/font&gt;&lt;/p&gt;">
+          <image width="312" height="145" zoomheight="172" playbar="false" autoplay="false" zoomwidth="369" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image5.jpg" zoomimage="imageZoom5.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="1" x="212" y="75">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="f8b20583-3119-4d28-a368-ca3420487af8" name="Key Words" title="" number="3" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Alternatively, search using &lt;b&gt;Key Words&lt;/b&gt;.  The &lt;b&gt;Key Words &lt;/b&gt;entered will be used to search within the &lt;i&gt;Project Description, Reference, Sponsor, Project Holder, Ethics Certification &lt;/i&gt;and&lt;i&gt; RSO ID&lt;/i&gt; attributes of the project.  If any of the above attributes contain all the &lt;b&gt;Key Words&lt;/b&gt; entered, the search results will be displayed.  &lt;/font&gt;&lt;/p&gt;">
+          <image width="312" height="19" zoomheight="42" playbar="false" autoplay="false" zoomwidth="662" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image6.jpg" zoomimage="imageZoom6.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="1" x="465" y="38">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="985ae5ec-d583-4973-b878-b0ddd82689e4" name="Faculty" title="" number="4" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Similar to &lt;b&gt;Department&lt;/b&gt;, you can search by &lt;b&gt;Faculty&lt;/b&gt;, based on the security access you may have in eFIN.&lt;/font&gt;&lt;/p&gt;">
+          <image width="305" height="157" zoomheight="157" playbar="false" autoplay="false" zoomwidth="305" zoommode="Embedded" allowzoom="false" align="bottom" duration="0" framerate="30" name="image7.jpg" zoomimage="" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="3" x="569" y="105">
+      <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      <steps>
+        <Step id="2819a388-e92c-48e1-a3b8-e17eaeba75af" name="Quick Tip #4" title="" number="5" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;If you enter multiple search criteria using the &lt;b&gt;Advanced Search &lt;/b&gt;options, the search results displayed will be based on all the criteria.  For example, selecting a &lt;b&gt;Project Status &lt;/b&gt;of &lt;i&gt;Active&lt;/i&gt; and a &lt;b&gt;Department&lt;/b&gt; of &lt;i&gt;Accounts Payable&lt;/i&gt;, will only show active projects for the Accounts Payable department.  &lt;/font&gt;&lt;/p&gt;">
+          <image width="312" height="67" zoomheight="79" playbar="false" autoplay="false" zoomwidth="365" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image8.jpg" zoomimage="imageZoom8.jpg" />
+        </Step>
+      </steps>
+    </label>
+  </labels>
+  <introduction>
+    <label panelpos="auto" iconid="intro" x="11" y="-16">
+      <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      <steps>
+        <Step id="7e0f3a95-7e1b-41c8-9ade-6e7823805d70" name="Introduction" title="" number="0" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;There are four new search criteria available through &lt;b&gt;Advanced Search &lt;/b&gt;options on the &lt;b&gt;Project List &lt;/b&gt;page.  Click the icon adjacent to the &lt;b&gt;Project Number Contains &lt;/b&gt;field, as shown, to access these criteria.&lt;/font&gt;&lt;/p&gt;" intro="true">
+          <image width="312" height="15" zoomheight="34" playbar="false" autoplay="false" zoomwidth="700" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image3.jpg" zoomimage="imageZoom3.jpg" />
+        </Step>
+      </steps>
+    </label>
+  </introduction>
+  <nextslide enabled="False" text="" show="" />
+  <starttip show="false" text="Click next to continue" />
+  <resume id="f8e249ea-e1ed-4691-9fbc-03c2fa43d062" enabled="false" />
+</Interaction>

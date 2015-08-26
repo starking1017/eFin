@@ -1,0 +1,73 @@
+
+	
+=== changes for BSI - eFIN Security Feb 2011
+1. New tables
+	tblUser
+	eSPAR_eFin_Security
+	tblConstAccountGroup
+2. View
+	v_eFin_Viewing_Team(New) (when new flag added to project team dimension, we need to change this view again)
+	v_Project(New)
+	v_Dept(New)
+	v_eFin_Security(New)(Used for eFinConnection metadata)
+3. SPs (New)
+	eFinsp_GetAdmin
+	eFinsp_SearchTeam ( if the team dimension is changed, this SP needs to be altered)
+	eFinsp_LoadAccountGroup
+	eFinsp_EfinSecuritySearch
+	eFinsp_EfinSecurityDelete
+	eFinsp_EfinSecurityUpdate
+	eFinsp_EfinSecurityInsert
+	eFinsp_LoadFacDept
+	sp_eFin_Security_Search_DeptFac
+	eFinsp_LoadPersonInfo
+	eFinsp_DeptSecurityDelete
+	eFinsp_DeleteAdmin
+	eFinsp_EditAdmin
+4. Folder (Not need)
+	BatchUpdate (Permission)
+	
+=== changes for BSI - eFIN Project attributes Mar 2011
+
+1. Views
+	V_Project (New)
+	v_eFin_CP_Header (Change)
+2. SPs
+	[eFinsp_LoadPrejoinedProjectListWithSecurity] (Change)
+	eFinsp_LoadPrejoinedProjectListByProjectCode(Change)
+	eFinsp_LoadProjectStatus(Change)
+
+3 UofC_DW_eFIN
+	[eFinsp_LoadProjectListWithSecurityTest] (changed for parent project code)(ERPROJDEV01)
+
+=== changes for BSI - eFIN Project Budget April 2011
+1. Forms:
+	FinancialSummary.ascx
+	frm_ProjectDetail.aspx
+2. ADW_Publish: new Publish D_Acct_Budget_Node (May not need)
+3. eFin_Connection:
+	New views :
+		v_F_Project_Summary (New)
+		v_D_Acct_Budget_Node (New)
+4. Views:
+	ADW_PSRT_Mart: D_Account (ERPROJDEV02)
+5. SPs:
+	[eFinsp_LoadProjectBudget](New)
+	eFinsp_LoadSummaryProjectBudget (New)
+	[eFinsp_LoadPrejoinedProjectListByProjectCode] (Changed)
+	
+=== POI security Nov 10, 2011 ========================
+1. eFINConnection
+	Tables:
+		tblPOITeam
+		tblPOITeamLog
+	SPs:
+		[eFinsp_SearchPOITeam]
+		eFinsp_POITeamUpdate
+		eFinsp_POITeamInsert
+	Views:
+		[v_eFin_Viewing_Team]
+2. UofC_Stage_FRP
+	Tables:
+	eFinPoiTeam
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CommandFooterMenu >
+
+  <CommandFooter ID="SP">
+    <MenuItems ITEMID="0" COUNT="2">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+    </MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="CP">
+    <MenuItems ITEMID="1" COUNT="5">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Project Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectSummaryByAccount.aspx?category=PROJDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Project Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=PROJECTALLACCOUNT"></MenuItem>
+      <MenuItem Name="Project Employees" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectEmployee.aspx?category=PROJECTEMPLOYEE"></MenuItem>
+      <MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="ACT">
+    <MenuItems ITEMID="2" COUNT="5">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Activity Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ActSummaryByAccount.aspx?category=ACTDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Activity Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=ACTIVITYALLACCOUNT"></MenuItem>
+      <MenuItem Name="Activity Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+      <MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="PROJDETAILALLACCT">
+    <MenuItems ITEMID="3" COUNT="5">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Project Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=PROJECTALLACCOUNT"></MenuItem>
+      <MenuItem Name="Project Employees" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectEmployee.aspx?category=PROJECTEMPLOYEE"></MenuItem>
+      <MenuItem Name="Project Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="ACTDETAILALLACCT">
+    <MenuItems ITEMID="4" COUNT="4">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Activity Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=ACTIVITYALLACCOUNT"></MenuItem>
+      <MenuItem Name="Activity Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="PROJECTALLACCOUNT">
+    <MenuItems ITEMID="5" COUNT="5">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Project Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectSummaryByAccount.aspx?category=PROJDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Project Employees" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectEmployee.aspx?category=PROJECTEMPLOYEE"></MenuItem>
+      <MenuItem Name="Project Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="PROJECTSINGLEACCOUNT">
+    <MenuItems ITEMID="6" COUNT="6">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Project Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectSummaryByAccount.aspx?category=PROJDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Project Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=PROJECTALLACCOUNT"></MenuItem>
+      <MenuItem Name="Project Employees" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectEmployee.aspx?category=PROJECTEMPLOYEE"></MenuItem>
+      <MenuItem Name="Project Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="ACTIVITYALLACCOUNT">
+    <MenuItems ITEMID="7" COUNT="4">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Activity Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ActSummaryByAccount.aspx?category=ACTDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Activity Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="ACTIVITYSINGLEACCOUNT">
+    <MenuItems ITEMID="8" COUNT="5">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Activity Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ActSummaryByAccount.aspx?category=ACTDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Activity Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=ACTIVITYALLACCOUNT"></MenuItem>
+      <MenuItem Name="Project Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="PROJECTEMPLOYEE">
+    <MenuItems ITEMID="9" COUNT="5">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Project Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectSummaryByAccount.aspx?category=PROJDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Project Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=PROJECTALLACCOUNT"></MenuItem>
+      <MenuItem Name="Project Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+
+  <CommandFooter ID="PROJECTEMPLOYEEDETAIL">
+    <MenuItems ITEMID="10" COUNT="6">
+      <MenuItem Name="Home Page" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectList.aspx"></MenuItem>
+      <MenuItem Name="Project Summary By Account" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectSummaryByAccount.aspx?category=PROJDETAILALLACCT"></MenuItem>
+      <MenuItem Name="Project Detail For All Accounts" Link="~/frm_ProgressPage.aspx?destPage=frm_AccountDetails.aspx?category=PROJECTALLACCOUNT"></MenuItem>
+      <MenuItem Name="Project Employees" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectEmployee.aspx?category=PROJECTEMPLOYEE"></MenuItem>
+      <MenuItem Name="Project Header" Link="~/frm_ProgressPage.aspx?destPage=frm_ProjectDetail.aspx?action=sess"></MenuItem>
+		<MenuItem Name="Report Generation" Link="https://ereports2.ucalgary.ca/cognosUNcas/login.aspx?b_action=cognosViewer&amp;ui.action=run&amp;ui.object=%2fcontent%2fpackage%5b%40name%3d%27PS%20Research%20and%20Trust%27%5d%2freport%5b%40name%3d%27Research%20Accounting%20Reports%20Menu%27%5d&amp;ui.name=Research%20Accounting%20Reports%20Menu&amp;run.outputFormat=&amp;run.prompt=true" Tooltip="Showing reports list menu"></MenuItem>
+	</MenuItems>
+  </CommandFooter>
+</CommandFooterMenu>

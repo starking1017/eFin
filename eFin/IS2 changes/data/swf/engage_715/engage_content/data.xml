@@ -1,0 +1,50 @@
+<Interaction Type="Labeled Graphic" Title="How to Review Budget Information" contentfont="Articulate" dotanimation="spin" defaultimage="false" jpegquality="80" autoplay="false" autoplayduration="5" headingfont="Articulate" navfont="Articulate" soundeffects="true" volumebutton="true" audioquality="custom" audiocustombitrate="br112Kbps" audiocustomfrequency="fq22KHz" audiocustomchannel="ccMono" navbuttons="true" forceorder="false" detectflashver="true" animation="bounce" version="2.3.1103.112" borderstyle="none">
+  <bgimage src="image1.jpg" percent="30" originalSource="imageSource1.png" width="690" height="314" />
+  <labels>
+    <label panelpos="auto" iconid="1" x="122" y="146">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="ca813577-cd88-4907-be5a-1051b1b7c30d" name="Budget Project to Date Summary" title="" number="1" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;In this view, the &lt;b&gt;Budget&lt;/b&gt; and &lt;b&gt;Actual&lt;/b&gt; amounts displayed are the amounts entered for the period prior (or equal to the end date that is selected within &lt;b&gt;Display Options &lt;/b&gt;at the top of the page).&lt;/font&gt;&lt;/p&gt;">
+          <image width="312" height="55" zoomheight="124" playbar="false" autoplay="false" zoomwidth="699" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image3.jpg" zoomimage="imageZoom3.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="1" x="255" y="145">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="985a8b77-10bd-4bc1-838f-9af898c03012" name="Budget Current Fiscal Year Summary" title="" number="2" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;In this view, the &lt;b&gt;Budget&lt;/b&gt; and &lt;b&gt;Actual&lt;/b&gt; amounts are the amounts entered for current fiscal year. The current fiscal year is based on the &lt;b&gt;Refreshed Date&lt;/b&gt;, and not the current date (i.e. the date you are currently viewing the report).  &lt;/font&gt;&lt;/p&gt;&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;&lt;b&gt;NOTE&lt;/b&gt;: The &lt;b&gt;Refreshed Dat&lt;/b&gt;e is listed at the top of the report, as shown.&lt;/font&gt;&lt;/p&gt;">
+          <image width="311" height="53" zoomheight="118" playbar="false" autoplay="false" zoomwidth="700" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image4.jpg" zoomimage="imageZoom4.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="1" x="404" y="144">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="f8b20583-3119-4d28-a368-ca3420487af8" name="Budget Project Life Summary" title="" number="3" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;This view shows &lt;b&gt;Budget&lt;/b&gt; and &lt;b&gt;Actual&lt;/b&gt; amounts for the project life cycle; regardless of the time period user selects.&lt;/font&gt;&lt;/p&gt;">
+          <image width="312" height="50" zoomheight="112" playbar="false" autoplay="false" zoomwidth="700" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image5.jpg" zoomimage="imageZoom5.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="3" x="666" y="149">
+      <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      <steps>
+        <Step id="ea48d157-6b1d-4518-902d-ddb53609d23b" name="Quick Tip #3" title="" number="4" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Remember, you can click the Excel button on any report to download data into an Excel spreadsheet.&lt;/font&gt;&lt;/p&gt;">
+          <image width="87" height="30" zoomheight="30" playbar="false" autoplay="false" zoomwidth="87" zoommode="Embedded" allowzoom="false" align="bottom" duration="0" framerate="30" name="image0.jpg" zoomimage="" />
+        </Step>
+      </steps>
+    </label>
+  </labels>
+  <introduction>
+    <label panelpos="auto" iconid="intro" x="11" y="-13">
+      <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      <steps>
+        <Step id="7e0f3a95-7e1b-41c8-9ade-6e7823805d70" name="Introduction" title="" number="0" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;There are three new ways to view project budget information in eFIN on the&lt;b&gt; Project Header &lt;/b&gt;page.  Click on a marker adjacent to each tab to see how information will be presented in each view.  &lt;/font&gt;&lt;/p&gt;" intro="true">
+          <image width="85" height="40" zoomheight="86" playbar="false" autoplay="false" zoomwidth="177" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image2.jpg" zoomimage="imageZoom2.jpg" />
+        </Step>
+      </steps>
+    </label>
+  </introduction>
+  <nextslide enabled="False" text="" show="" />
+  <starttip show="false" text="Click next to continue" />
+  <resume id="2fef2e27-273c-4703-a817-7fd91c0ba3fc" enabled="false" />
+</Interaction>

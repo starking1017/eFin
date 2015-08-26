@@ -1,0 +1,48 @@
+<Interaction Type="Labeled Graphic" Title="Navigation Overview" contentfont="Articulate" dotanimation="spin" defaultimage="false" jpegquality="80" autoplay="false" autoplayduration="5" headingfont="Articulate" navfont="Articulate" soundeffects="true" volumebutton="true" audioquality="custom" audiocustombitrate="br112Kbps" audiocustomfrequency="fq22KHz" audiocustomchannel="ccMono" navbuttons="true" forceorder="false" detectflashver="true" animation="bounce" version="2.3.1103.112" borderstyle="round_inset">
+  <bgimage src="image3.jpg" percent="30" originalSource="imageSource3.png" width="690" height="447" />
+  <labels>
+    <label panelpos="auto" iconid="7" x="8" y="91">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="ca813577-cd88-4907-be5a-1051b1b7c30d" name="Outline Tab" title="" number="1" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Click the &lt;b&gt;Outline&lt;/b&gt; tab, then click on a slide title to go to that slide.&lt;/font&gt;&lt;/p&gt;">
+          <image width="149" height="206" zoomheight="367" playbar="false" autoplay="false" zoomwidth="265" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image2.jpg" zoomimage="imageZoom2.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="11" x="166" y="91">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="985a8b77-10bd-4bc1-838f-9af898c03012" name="Notes Tab" title="" number="2" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Click the &lt;b&gt;Notes&lt;/b&gt; tab to read the narration.&lt;/font&gt;&lt;/p&gt;">
+          <image width="252" height="206" zoomheight="219" playbar="false" autoplay="false" zoomwidth="267" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image6.jpg" zoomimage="imageZoom6.jpg" />
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="7" x="479" y="9">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="f8b20583-3119-4d28-a368-ca3420487af8" name="Course Resources" title="" number="3" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Click in this area to gain access to resources provided with this course (for example, supplementary documents and links, glossary of terms, etc.).&lt;/font&gt;&lt;/p&gt;">
+        </Step>
+      </steps>
+    </label>
+    <label panelpos="auto" iconid="9" x="401" y="395">
+      <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      <steps>
+        <Step id="719260c0-7ff0-4468-a1b8-4c55cd378319" name="Player Controls" title="" number="4" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;These playback controls let you pause, resume play, and skip back and forth one slide at a time.&lt;/font&gt;&lt;/p&gt;">
+          <image width="294" height="207" zoomheight="243" playbar="false" autoplay="false" zoomwidth="346" zoommode="Embedded" allowzoom="true" align="bottom" duration="0" framerate="30" name="image1.jpg" zoomimage="imageZoom1.jpg" />
+        </Step>
+      </steps>
+    </label>
+  </labels>
+  <introduction>
+    <label panelpos="auto" iconid="intro" x="674" y="433">
+      <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      <steps>
+        <Step id="7e0f3a95-7e1b-41c8-9ade-6e7823805d70" name="Introduction" title="" number="0" audioonly="false" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='13' color=''&gt;Here's an image of a typical course and player. Click on a spinning marker to learn more about that player part. Click the &quot;Next Slide&quot; button at the top of this screen any time to start the course proper.&lt;/font&gt;&lt;/p&gt;" intro="true">
+        </Step>
+      </steps>
+    </label>
+  </introduction>
+  <nextslide enabled="False" text="" show="" />
+  <starttip show="false" text="Click next to continue" />
+  <resume id="37d828da-0958-486a-9968-89dddcf5d479" enabled="false" />
+</Interaction>

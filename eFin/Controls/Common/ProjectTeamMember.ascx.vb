@@ -29,7 +29,7 @@ Partial Class Controls_ProjectTeamMember
 
         arrParams.Add(strCPID)
 
-        dt = BLL.ProjectTeamMembers.LoadProjectTeamMembers("SELECT", "dbo.eFinsp_LoadProjectTeamMembers_1", arrParams)
+        dt = BLL.ProjectTeamMembers.LoadProjectTeamMembers("SELECT", "dbo.eFinsp_LoadProjectTeamMembers", arrParams)
 
         If Not dt Is Nothing Then
 
@@ -143,9 +143,12 @@ Partial Class Controls_ProjectTeamMember
                 lbl = CType(e.Item.FindControl("lblName"), Label)
                 lbl.Text = strMemberName
 
-                hpy = CType(e.Item.FindControl("hypType"), HyperLink)
-                hpy.Text = strMemberType
-                hpy.NavigateUrl = "javascript:void window.open('../../memberType.html','','menubar=no,status=no,scrollbars=no,top=0,left=0,toolbar=no,width=550,height=530');"
+                'hpy = CType(e.Item.FindControl("hypType"), HyperLink)
+                'hpy.Text = strMemberType
+                'hpy.NavigateUrl = "javascript:void window.open('../../memberType.html','','menubar=no,status=no,scrollbars=no,top=0,left=0,toolbar=no,width=550,height=530');"
+
+                lbl = CType(e.Item.FindControl("lblType"), Label)
+                lbl.Text = strMemberType
 
                 ' Deal with email hyperlink
                 Dim str() As String = strMemberInfo.Split(CType(",", Char))
@@ -189,8 +192,8 @@ Partial Class Controls_ProjectTeamMember
                 lbl = CType(e.Item.FindControl("lblType"), Label)
                 lbl.Text = ""
 
-                hpy = CType(e.Item.FindControl("hypType"), HyperLink)
-                hpy.Text = ""
+                'hpy = CType(e.Item.FindControl("hypType"), HyperLink)
+                'hpy.Text = ""
 
                 hpy = CType(e.Item.FindControl("hypEmail"), HyperLink)
                 hpy.Text = ""

@@ -3,6 +3,12 @@ Namespace BLL
 
     Public Class Header
 
+        Public Shared Function GetMaxExtendYear() As Integer
+            Dim _nMaxExtendYear As Integer = 20
+            Return _nMaxExtendYear
+        End Function
+
+
         Public Shared Function GetAsAtDate(ByRef DBOperation As String, ByRef SP_Name As String, ByRef arrParams As ArrayList) As DataTable
             Return DAL.FinancialSummaryDB.LoadFinancialSummaryDB(DBOperation, SP_Name, arrParams)
         End Function

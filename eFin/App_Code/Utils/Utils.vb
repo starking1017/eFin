@@ -7,8 +7,8 @@ Imports System.Web.Mail
 
 Public Class Utils
 
-    Public Const PRODUCTION_MODE = "PRODUCTION"
-    Public Const TEST_MODE = "TEST"
+    Public Const PRODUCTION_MODE As String = "PRODUCTION"
+    Public Const TEST_MODE As String = "TEST"
     ''' <summary>
     ''' Enumerate the sort direction
     ''' </summary>

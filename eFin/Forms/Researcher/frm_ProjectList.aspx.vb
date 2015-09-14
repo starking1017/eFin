@@ -377,6 +377,22 @@ Partial Class Forms_Researcher_frm_ProjectList
     Private Sub BinddgProjects(ByRef dt As DataView)
         Me.btnExcel.Visible = True
         dgProjects.DataSource = dt
+        If dt.Count > 1000 Then
+            likPaging.Enabled = False
+        End If
+
+        If Not Me.IsPostBack And Not Me.IsCallback Then
+            If Request.Cookies("dvPaging") Is Nothing Then
+                Response.Cookies("dvPaging").Value = "True"
+            End If
+            dgProjects.AllowPaging = CType(Request.Cookies("dvPaging").Value, Boolean)
+            If dgProjects.AllowPaging = True Then
+                likPaging.Text = "Off"
+            Else
+                likPaging.Text = "On"
+            End If
+        End If
+
         dgProjects.DataBind()
     End Sub
 
@@ -1153,5 +1169,19 @@ Partial Class Forms_Researcher_frm_ProjectList
 
     Protected Sub lbSecurity_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lbSecurity.Click
         Response.Redirect(Utils.ApplicationPath + "/frm_ProgressPage.aspx?destPage=Forms/Admin/frm_Team_Security.aspx")
+    End Sub
+
+    Protected Sub likPaging_Click(sender As Object, e As EventArgs) Handles likPaging.Click
+        If (dgProjects.AllowPaging) Then
+            dgProjects.AllowPaging = False
+            likPaging.Text = "On"
+            BindGrid()
+            Response.Cookies("dvPaging").Value = "False"
+        Else
+            dgProjects.AllowPaging = True
+            likPaging.Text = "Off"
+            BindGrid()
+            Response.Cookies("dvPaging").Value = "True"
+        End If
     End Sub
 End Class

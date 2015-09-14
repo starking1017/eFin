@@ -14,7 +14,7 @@ Public Class FacultyDeptAuthorization
             .Add("faculty")
             .Add("")
         End With
-        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept_1", al)
+        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept", al)
 
     End Function
     Public Shared Function DepartmentTable() As DataTable
@@ -24,7 +24,7 @@ Public Class FacultyDeptAuthorization
             .Add("department")
             .Add("")
         End With
-        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept_1", al)
+        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept", al)
     End Function
 
     Public Function Search() As DataTable
@@ -117,41 +117,45 @@ Public Class FacultyDeptAuthorization
         Return DAL.GenericDBOperation.GenericDataBaseOperationDB( _
                                     "DELETE", "eFinsp_DeptSecurityDelete", al)
     End Function
-    Public Function ValidateData() As String
+    Public Sub ValidateData()
         'function validate user input
 
         'check UCID
         If Me.UCID = "" Or Me.UCID = Nothing Then
             ValidationMessage = "UCID required "
-            Exit Function
+            'Return ""
+            Exit Sub
         End If
 
         'Check UCID length
         If Me.UCID.Length > 8 Or Me.UCID.Length < 8 Then
             ValidationMessage = "Invalid UCID "
-            Exit Function
+            'Return ""
+            Exit Sub
         End If
 
 
         If Me.DepartmentID.Trim <> "NA" And Me.FacultyID.Trim <> "NA" Then
             ValidationMessage = "Select Faculty or Department"
-            Exit Function
+            'Return ""
+            Exit Sub
         End If
 
         'added by jack on JUly 5, 2009 for mutiple ucids issue
         Dim data As HR = HR.GetPersonalInfo(Ucid)
         If data Is Nothing Then
             ValidationMessage = "Invalid UCID "
-            Exit Function
+            'Return ""
+            Exit Sub
         Else
             Me.LastName = data.FamilyName
             Me.FirstName = data.GivenName
         End If
         '---------------------------
-
+        'Return ""
         ValidationMessage = ""
 
-    End Function
+    End Sub
     Public Function IsExist() As Boolean
         Dim al As New ArrayList
         With al

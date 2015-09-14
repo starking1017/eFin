@@ -93,7 +93,7 @@ Partial Class Forms_Researcher_frm_ProjectSummaryByAccount
         arrParams.Add(endDate)
         arrParams.Add(HeaderControl.GetProjectID)
 
-        dt = BLL.ProjectSummaryByAccount.LoadProjectSummaryByAccount("SELECT", "dbo.eFinsp_LoadSummaryByAccountListsWithSecurity_1", arrParams)
+        dt = BLL.ProjectSummaryByAccount.LoadProjectSummaryByAccount("SELECT", "dbo.eFinsp_LoadSummaryByAccountListsWithSecurity", arrParams)
 
         If Not dt Is Nothing Then
             Me.dgProjects.DataSource = dt
@@ -303,5 +303,24 @@ Partial Class Forms_Researcher_frm_ProjectSummaryByAccount
 
         HttpContext.Current.Response.Write(oStringWriter.ToString())
         HttpContext.Current.Response.End()
+    End Sub
+
+    Private Sub Page_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
+
+        Dim dt As DataTable
+        If (Not Session("dtAwardData") Is Nothing) Then
+            dt = CType(Session("dtAwardData"), DataTable).Copy()
+            dt.Rows.RemoveAt(dt.Rows.Count - 1)
+            Dim row As DataRow = dt.NewRow()
+            row.Item(0) = "-- Select Year --"
+            dt.Rows.InsertAt(row, 0)
+            Session("dtProjectYear") = dt
+
+            HeaderControl.GetPHControlProjectYear().DataSource = dt
+            HeaderControl.GetPHControlProjectYear().DataTextField = "fld_Year"
+            HeaderControl.GetPHControlProjectYear().DataValueField = "fld_Year"
+            HeaderControl.GetPHControlProjectYear().DataBind()
+        End If
+
     End Sub
 End Class

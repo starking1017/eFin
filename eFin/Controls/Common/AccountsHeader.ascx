@@ -41,7 +41,7 @@
 				<TABLE id="Table2" style="FONT-SIZE: x-small; FONT-FAMILY: Verdana; BORDER-COLLAPSE: collapse"
 					cellSpacing="0" cellPadding="0" width="100%" border="1">
 					<TR>
-						<TD vAlign="middle" noWrap align="center" rowspan ="2">
+						<TD vAlign="middle" noWrap align="center" rowspan ="1">
 						<asp:linkbutton id="lnkBtnFullview" runat="server" Font-Size="10" Font-Bold="true" ToolTip="Sets project Start Year / Month to start date of project and End Year / Month to current month." OnClientClick="ShowProgressBar();">Full View</asp:linkbutton>
 						</TD>
 						<TD style="HEIGHT: 15px" noWrap bgColor="silver">
@@ -52,6 +52,10 @@
 						</TD>
 					</TR>
 					<TR>
+					     <TD vAlign="middle" noWrap align="center" >
+						    Projet Year:
+							<asp:dropdownlist id="ddlProjectYear" runat="server" AutoPostBack="True" OnClientClick="ShowProgressBar();"></asp:dropdownlist>
+						</TD>
 						<TD style="HEIGHT: 21px" noWrap>
 							<P align="center">
 								<asp:dropdownlist id="ddlStartYear"  runat="server"></asp:dropdownlist>

@@ -267,7 +267,7 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add("00000")
 
                 ' Retrieve summary project financial summary, security is handle on database side
-                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadSummaryProjectFinancialSummary_1", arrParams)
+                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadSummaryProjectFinancialSummary", arrParams)
 
             Case "CP"   ' Child Project
                 Dim strCPID As String = CType(Session("CPID"), String)
@@ -281,7 +281,7 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add("00000")
 
                 ' Retrieve child project financial summary, security is handle on database side
-                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectFinancialSummary_1", arrParams)
+                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectFinancialSummary", arrParams)
 
             Case "ACT"  ' Activity
                 Dim strCPID As String = CType(Session("CPID"), String)
@@ -297,7 +297,7 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add(strACTID) '@actid varchar(20)
 
                 ' Retrieve activity financial summary, security is handle on database side
-                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadActivityFinancialSummary_1", arrParams)
+                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadActivityFinancialSummary", arrParams)
 
         End Select
 
@@ -371,7 +371,7 @@ Partial Public Class Controls_FinancialSummary
     Private Sub LoadFinancialChart(ByRef startDate As String, ByRef endDate As String)
 
         Dim dtChart As New DataTable
-        'Dim dtChart2 As New DataTable
+        Dim dtChart2 As New DataTable
         ' Load chart control data
         Dim strCategory As String = CType(Session("Category"), String)  ' Retrieve category from session
         Dim arrParams As New ArrayList
@@ -379,7 +379,6 @@ Partial Public Class Controls_FinancialSummary
 
         Select Case strCategory
             Case "SP"   ' Summary Project
-                Dim strSPID As String = CType(Session("SPID"), String)
                 arrParams.Add(CType(Session("UCID"), String))
                 arrParams.Add(CType(Session("SPID"), String))
                 arrParams.Add(startDate)
@@ -415,30 +414,31 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add(endDate)
 
                 ' Retrieve summary project financial summary, security is handle on database side
-                dtChart = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectExpendbyCategory", arrParams)
-                If (Not dtChart Is Nothing And dtChart.Rows.Count > 0) Then
-                    SetAndBindCPChart(dtChart)
-                    ChartActualOverAll.Visible = True
-                    lblError.Visible = False
-                Else
+                dtChart = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectActualOverall", arrParams)
+                If (dtChart Is Nothing Or dtChart.Rows.Count <= 1) Then
                     ChartActualOverAll.Visible = False
                     ChartSpendbyCategory.Visible = False
                     ChartTotalActuals.Visible = False
                     lblError.Visible = True
                     lblError.Text = "There is no data for this time period."
+                Else
+                    SetAndBindActualOverall(dtChart)
+                    ChartActualOverAll.Visible = True
+                    lblError.Visible = False
+
+                    'Retrieve summary project financial summary, security is handle on database side
+                    dtChart2 = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectExpendbyCategory", arrParams)
+                    If (Not dtChart2 Is Nothing) Then
+                        SetAndBindSpendbyCategory(dtChart2)
+                    End If
                 End If
-                '' Retrieve summary project financial summary, security is handle on database side
-                ''dtChart2 = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadTopTenExpendofPIProject", arrParams)
-                ''If (Not dtChart2 Is Nothing) Then
-                ''    BindPIAllSpendChart(dtChart2)
-                ''End If
         End Select
 
     End Sub
 
-    Private Sub SetAndBindCPChart(dtChart As DataTable)
+    Private Sub SetAndBindActualOverall(dtChart As DataTable)
 
-        ChartSpendbyCategory.Visible = False
+        ChartSpendbyCategory.Visible = True
         ChartTotalActuals.Visible = False
 
         '-----------------------------------------------------------------------------------
@@ -450,8 +450,8 @@ Partial Public Class Controls_FinancialSummary
 
         ChartActualOverAll.ChartAreas("ChartArea1").AxisY.Title = "£¨$£©"
         ChartActualOverAll.ChartAreas("ChartArea1").AxisX.Title = "Category"
-        ChartActualOverAll.Series("Budget").ToolTip = "#VALY"
-        ChartActualOverAll.Series("Actual").ToolTip = "#VALY"
+        ChartActualOverAll.Series("Budget").ToolTip = "#VALY{#,##0}"
+        ChartActualOverAll.Series("Actual").ToolTip = "#VALY{#,##0}"
 
         'Add Legend for Chart
         Dim LegendAOA As Legend = New Legend("AOALegend")
@@ -468,47 +468,23 @@ Partial Public Class Controls_FinancialSummary
         ChartActualOverAll.ChartAreas("ChartArea1").BorderDashStyle = DataVisualization.Charting.ChartDashStyle.Solid
         ChartActualOverAll.ChartAreas("ChartArea1").BorderWidth = 1
 
+    End Sub
+
+    Private Sub SetAndBindSpendbyCategory(dtChart As DataTable)
 
         '-----------------------------------------------------------------------------------
         'Bind and setting second chart
         '-----------------------------------------------------------------------------------
 
-        'ChartSpendbyCategory.Series("Series1").XValueMember = "Category"
-        'ChartSpendbyCategory.Series("Series1").YValueMembers = "Actual"
+        ChartSpendbyCategory.Series("Series1").XValueMember = "Category"
+        ChartSpendbyCategory.Series("Series1").YValueMembers = "Actual"
 
-        'ChartSpendbyCategory.DataSource = dtChart
-        'ChartSpendbyCategory.DataBind()
+        ChartSpendbyCategory.Series("Series1").ToolTip = "#VALY{#,##0}"
 
-        'ChartSpendbyCategory.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
+        ChartSpendbyCategory.DataSource = dtChart
+        ChartSpendbyCategory.DataBind()
 
-
-        'ChartActualOverAll.Series.Clear()
-        'ChartActualOverAll.Legends.Clear()
-        'Dim seriesBudget As Series = New Series("Budget")
-        'Dim seriesActual As Series = New Series("Actual")
-
-        'For i As Integer = 2 To List.Count - 1
-        '    seriesBudget.Points.AddXY(List.Item(i).Title, 50000 * i)
-        '    seriesActual.Points.AddXY(List.Item(i).Title, List.Item(i).Actual)
-        'Next
-
-        'ChartActualOverAll.Series.Add(seriesBudget)
-        'ChartActualOverAll.Series.Add(seriesActual)
-
-        'Dim seriesActual As Series = New Series("Actual")
-        'Dim LegendCSC As Legend = New Legend("CSCLegend")
-        'ChartSpendbyCategory.Series.Clear()
-        'ChartSpendbyCategory.Series.Add("Series1")
-        'ChartSpendbyCategory.Series("Series1").Points.AddXY("Online", 242)
-        'ChartSpendbyCategory.Series("Series1").Points.AddXY("Offline", 256)
-        'ChartSpendbyCategory.Series("Series1").Points.AddXY("Offline", 125)
-
-        'ChartTotalActuals.Series.Clear()
-        'ChartTotalActuals.Series.Add("Series2")
-        'ChartTotalActuals.Series("Series2").Points.AddXY("Online", 60)
-        'ChartTotalActuals.Series("Series2").Points.AddXY("Offline", 40)
-        'ChartTotalActuals.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
-
+        ChartSpendbyCategory.ChartAreas("ChartArea1").Area3DStyle.Enable3D = True
     End Sub
 
     Private Sub BindPIAllSpendChart(dtChart As DataTable)

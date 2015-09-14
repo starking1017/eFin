@@ -106,7 +106,7 @@ Partial Class Forms_Researcher_frm_ProjectEmployee
             arrParams.Add(endDate)
             arrParams.Add(HeaderControl.GetProjectID)
 
-            dt = BLL.ProjectEmployee.LoadProjectEmployee("SELECT", "dbo.eFinsp_LoadProjectEmployee_1", arrParams)
+            dt = BLL.ProjectEmployee.LoadProjectEmployee("SELECT", "dbo.eFinsp_LoadProjectEmployee", arrParams)
 
             If Not dt Is Nothing Then
                 Session("dtEmployee") = dt
@@ -317,4 +317,24 @@ Partial Class Forms_Researcher_frm_ProjectEmployee
         dgrdEmployees.Attributes("SortDirection") = SortDirection
         BindData(CType(Session("dtEmployee"), DataTable))
     End Sub
+
+    Private Sub Page_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
+
+        Dim dt As DataTable
+        If (Not Session("dtAwardData") Is Nothing) Then
+            dt = CType(Session("dtAwardData"), DataTable).Copy()
+            dt.Rows.RemoveAt(dt.Rows.Count - 1)
+            Dim row As DataRow = dt.NewRow()
+            row.Item(0) = "-- Select Year --"
+            dt.Rows.InsertAt(row, 0)
+            Session("dtProjectYear") = dt
+
+            HeaderControl.GetPHControlProjectYear().DataSource = dt
+            HeaderControl.GetPHControlProjectYear().DataTextField = "fld_Year"
+            HeaderControl.GetPHControlProjectYear().DataValueField = "fld_Year"
+            HeaderControl.GetPHControlProjectYear().DataBind()
+        End If
+
+    End Sub
+
 End Class

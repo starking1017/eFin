@@ -47,10 +47,15 @@ Partial Class Controls_ProjectAwardData
             Dim strCategory As String = CType(Session("Category"), String)  ' Retrieve category from session
             Dim strProjectID As String = ""
             Dim arrParams As New ArrayList
-            Dim dt As DataTable
+            Dim dt As DataTable = New DataTable
 
             Dim strStartDate As String = BLL.ProjectPeriod.GetProjectPeriodFromTheSession.StartDate.Substring(0, 6)
-            Dim strEndDate As String = BLL.Header.GetAsAtDate.ToString("yyyyMM")
+
+            Dim strAsAtDate As String = BLL.Header.GetAsAtYear.ToString + BLL.Header.GetAsAtMonth.ToString.PadLeft(2, "0")
+            Dim strEndDate As String = BLL.ProjectPeriod.GetBudgetLastDate(strAsAtDate, BLL.Header.GetMaxExtendYear()).Substring(0, 6)
+
+            'Dim strEndDate As String = BLL.ProjectPeriod.GetProjectPeriodFromTheSession.EndDate.Substring(0, 6)
+            'Dim strEndDate As String = BLL.Header.GetAsAtDate.ToString("yyyyMM")
 
             Select Case strCategory
                 Case "SP"   ' Summary Project
@@ -80,11 +85,19 @@ Partial Class Controls_ProjectAwardData
             End Select
 
             If Not dt Is Nothing Then
-
-                Session("dtAwardData") = dt
-                Me.dgProjects.DataSource = dt
-                Me.dgProjects.DataBind()
-
+                If dt.Rows.Count > 0 Then
+                    Session("dtAwardData") = dt
+                    Me.dgProjects.DataSource = dt
+                    Me.dgProjects.DataBind()
+                Else
+                    lblError.Visible = True
+                    lblError.Text = "There is no data for this time period or not enough permission."
+                    Session("dtAwardData") = Nothing
+                End If
+            Else
+                lblError.Visible = True
+                lblError.Text = "There is no data for this time period or not enough permission."
+                Session("dtAwardData") = Nothing
             End If
         End If
     End Sub

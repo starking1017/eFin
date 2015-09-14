@@ -49,7 +49,7 @@
 										<asp:TextBox id="TextBox2" runat="server"></asp:TextBox>
 									</EditItemTemplate>
 								</asp:TemplateColumn>
-								<asp:BoundColumn DataField="Desc" HeaderText="Description"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Desc" HeaderText="Description" SortExpression="Desc"></asp:BoundColumn>
 								<asp:TemplateColumn HeaderText="Fiscal Period">
 									<ItemTemplate>
 										<asp:Label id="lblFiscalPeriod" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Fiscal_Period") %>'>

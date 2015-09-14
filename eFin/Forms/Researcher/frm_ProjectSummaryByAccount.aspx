@@ -42,18 +42,18 @@
 						<asp:BoundColumn DataField="fld_Desc" HeaderText="Description">
 							<HeaderStyle Width="25%"></HeaderStyle>
 						</asp:BoundColumn>
-						<asp:TemplateColumn HeaderText="Budget&lt;br&gt;($)">
-							<HeaderStyle Width="15%"></HeaderStyle>
-							<ItemStyle HorizontalAlign="Right"></ItemStyle>
-							<ItemTemplate>
-								<asp:Label id="lblBudget" runat="server"></asp:Label>
-							</ItemTemplate>
-						</asp:TemplateColumn>
 						<asp:TemplateColumn HeaderText="Actual&lt;br&gt;($)">
 							<HeaderStyle Width="15%"></HeaderStyle>
 							<ItemStyle HorizontalAlign="Right"></ItemStyle>
 							<ItemTemplate>
 								<asp:Label id="lblActual" runat="server"></asp:Label>
+							</ItemTemplate>
+						</asp:TemplateColumn>
+                        <asp:TemplateColumn HeaderText="Budget&lt;br&gt;($)">
+							<HeaderStyle Width="15%"></HeaderStyle>
+							<ItemStyle HorizontalAlign="Right"></ItemStyle>
+							<ItemTemplate>
+								<asp:Label id="lblBudget" runat="server"></asp:Label>
 							</ItemTemplate>
 						</asp:TemplateColumn>
 						<asp:TemplateColumn HeaderText="Encumbrances&lt;br&gt;($)">

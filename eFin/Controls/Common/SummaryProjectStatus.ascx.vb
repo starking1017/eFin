@@ -81,9 +81,22 @@ Partial Class Controls_SummaryProjectStatus
 
             ' Save project period
             If Not lblBeginDate.Text Is Nothing Then
+
                 Dim dateProjectStart As Date = CType(lblBeginDate.Text, DateTime)
                 Dim strProjectStart As String = dateProjectStart.ToString("yyyyMMdd")
-                BLL.ProjectPeriod.AddProjectPeriodToTheSession(New BLL.ProjectPeriod(strProjectStart, lblEndDate.Text))
+                Dim dateProjectEnd As Date = CType(lblEndDate.Text, DateTime)
+                Dim strProjectEnd As String = dateProjectEnd.ToString("yyyyMMdd")
+
+                Dim strProjectExpiry As String
+                If Not lblReviewDate.Text = "" Then
+                    Dim dateProjectExpiry As Date = CType(lblReviewDate.Text, DateTime)
+                    strProjectExpiry = dateProjectExpiry.ToString("yyyyMMdd")
+                Else
+                    strProjectExpiry = strProjectEnd
+                End If
+
+                BLL.ProjectPeriod.AddProjectPeriodToTheSession(New BLL.ProjectPeriod(strProjectStart, strProjectEnd, strProjectExpiry))
+
             End If
         End If
 

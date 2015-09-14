@@ -30,7 +30,7 @@ Partial Class Forms_Researcher_frm_ProjectDetail
 
             DisableStartAtAccount()
 
-            Dim str() As String '= (" "
+            Dim str() As String = {""}
 
             Dim strToDecrypted As String = Request.QueryString("value")
 
@@ -141,16 +141,12 @@ Partial Class Forms_Researcher_frm_ProjectDetail
 
         Dim dt As DataTable
         If (Not Session("dtAwardData") Is Nothing) Then
-            If (Session("dtProjectYear") Is Nothing) Then
-                dt = CType(Session("dtAwardData"), DataTable)
-                dt.Rows.RemoveAt(dt.Rows.Count - 1)
-                Dim row As DataRow = dt.NewRow()
-                row.Item(0) = "-- Select Year --"
-                dt.Rows.InsertAt(row, 0)
-                Session("dtProjectYear") = dt
-            Else
-                dt = CType(Session("dtProjectYear"), DataTable)
-            End If
+            dt = CType(Session("dtAwardData"), DataTable).Copy()
+            dt.Rows.RemoveAt(dt.Rows.Count - 1)
+            Dim row As DataRow = dt.NewRow()
+            row.Item(0) = "-- Select Year --"
+            dt.Rows.InsertAt(row, 0)
+            Session("dtProjectYear") = dt
 
             HeaderControl.GetPHControlProjectYear().DataSource = dt
             HeaderControl.GetPHControlProjectYear().DataTextField = "fld_Year"

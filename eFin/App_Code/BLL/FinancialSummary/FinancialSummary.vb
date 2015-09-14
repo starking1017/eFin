@@ -144,6 +144,8 @@ Namespace BLL
                             Return "December 31, " + strDate(0)
                         End If
                     End If
+                Case Else
+                    Return ""
             End Select
         End Function
 

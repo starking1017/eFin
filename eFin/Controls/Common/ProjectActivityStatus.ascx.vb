@@ -26,7 +26,7 @@ Partial Class Controls_ProjectActivityStatus
                 Dim objProjectStatus As New BLL.Status.ProjectHeader
 
                 ' Retrieve project header and assign values to the controls
-                If objProjectStatus.LoadProjectHeader("SELECT", "dbo.eFinsp_LoadProjectStatus_1", arrParams) = True Then
+                If objProjectStatus.LoadProjectHeader("SELECT", "dbo.eFinsp_LoadProjectStatus", arrParams) = True Then
                     Select Case objProjectStatus.ProjectStatus.Trim
                         Case "A"
                             Me.lblProjectStatus.Text = "Active"
@@ -268,12 +268,28 @@ Partial Class Controls_ProjectActivityStatus
             End If
 
             ' Save project period
-            Dim dateProjectStart As Date = CType(lblBeginDate.Text, DateTime)
-            Dim strProjectStart As String = dateProjectStart.ToString("yyyyMMdd")
-            BLL.ProjectPeriod.AddProjectPeriodToTheSession(New BLL.ProjectPeriod(strProjectStart, lblEndDate.Text))
+            Dim strProjectStart As String = ""
+            Dim strProjectEnd As String = ""
+            Dim strProjectExpiry As String = ""
+            If Not lblBeginDate.Text Is Nothing Then
+                Dim dateProjectStart As Date = CType(lblBeginDate.Text, DateTime)
+                strProjectStart = dateProjectStart.ToString("yyyyMMdd")
+                If Not lblEndDate.Text = "" Then
+                    Dim dateProjectEnd As Date = CType(lblEndDate.Text, DateTime)
+                    strProjectEnd = dateProjectEnd.ToString("yyyyMMdd")
+                End If
 
+
+                If Not lblExpiryDate.Text = "" Then
+                    Dim dateProjectExpiry As Date = CType(lblExpiryDate.Text, DateTime)
+                    strProjectExpiry = dateProjectExpiry.ToString("yyyyMMdd")
+                Else
+                    strProjectExpiry = strProjectEnd
+                End If
+
+                BLL.ProjectPeriod.AddProjectPeriodToTheSession(New BLL.ProjectPeriod(strProjectStart, strProjectEnd, strProjectExpiry))
+            End If
         End If
-
         If Session("isadmin") = "true" Then
             Me.panStatusAdmin.Visible = True
         End If

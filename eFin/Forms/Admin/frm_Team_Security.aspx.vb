@@ -224,7 +224,7 @@ Partial Class Forms_Researcher_frm_Security
                     End If
 
                     '========================-=== Check duplicate =========================================
-                    Dim _ucid As String
+                    Dim _ucid As String = ""
                     If Not Session("dgEfinSecurity") Is Nothing Then
                         dt = CType(Session("dgEfinSecurity"), DataTable)
                         For Each dr In dt.Rows

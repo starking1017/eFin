@@ -5,7 +5,7 @@
 <%@ Reference Control="~/Controls/Common/Header.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+	<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
 		<TR>
 			<TD vAlign="middle" align="center">
 				<table width="80%">
@@ -35,30 +35,30 @@
 					<tr>
 						<td align="center">
 							<asp:Panel ID="Panel1" runat="server" Visible="False">
-						     <br />
-				                <table style="width: 80%;" border="1" cellspacing="0">
-					                <tr >
-						                <td align="left" >
+							 <br />
+								<table style="width: 80%;" border="1" cellspacing="0">
+									<tr >
+										<td align="left" >
 											<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Verdana" 
 												Font-Size="X-Small" Text="Optional columns of the list"></asp:Label>
 											</td>
-						                <td align="left">
-							                <asp:CheckBoxList ID="CheckBoxList1" runat="server" 
-								                RepeatDirection="Horizontal" Font-Names="Verdana" Font-Size="X-Small">
-								                <asp:ListItem>Project Type</asp:ListItem>
-								                <asp:ListItem>General Classification</asp:ListItem>
-								                <asp:ListItem>Purpose of Funds</asp:ListItem>
-								                <asp:ListItem>Payroll Sub-Type</asp:ListItem>
-								                <asp:ListItem>Sponsor</asp:ListItem>
-							                </asp:CheckBoxList>
+										<td align="left">
+											<asp:CheckBoxList ID="CheckBoxList1" runat="server" 
+												RepeatDirection="Horizontal" Font-Names="Verdana" Font-Size="X-Small">
+												<asp:ListItem>Project Type</asp:ListItem>
+												<asp:ListItem>General Classification</asp:ListItem>
+												<asp:ListItem>Purpose of Funds</asp:ListItem>
+												<asp:ListItem>Payroll Sub-Type</asp:ListItem>
+												<asp:ListItem>Sponsor</asp:ListItem>
+											</asp:CheckBoxList>
 							
-						                </td>
-						                <td>
-							                <asp:linkbutton id="lnkBtnRefresh" runat="server" Font-Size="10" Font-Bold="true" ToolTip="Retrieve the information for selected time periord">Refresh</asp:linkbutton>
-						                </td>
-					                </tr>
-				                </table>
-			                </asp:Panel>
+										</td>
+										<td>
+											<asp:linkbutton id="lnkBtnRefresh" runat="server" Font-Size="10" Font-Bold="true" ToolTip="Retrieve the information for selected time periord">Refresh</asp:linkbutton>
+										</td>
+									</tr>
+								</table>
+							</asp:Panel>
 						</td>
 					</tr>
 				</table>
@@ -67,63 +67,67 @@
 						<asp:Button ID="btnExcel" runat="server" Text="Excel" CssClass="btn" Visible="False" />
 					</div>
 				</div>	
-				<!--- change added to GridLines=="both"-->					
-				 <asp:datagrid id="dgProjects" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="300"
-					Font-Names="Verdana" Width="80%" BorderColor="Black" BorderWidth="1px"
-					BackColor="White" CellPadding="3" HorizontalAlign="Center" cssclass="GridViewStyle" GridLines="Both">
-					<FooterStyle ForeColor="Black" BackColor="#CCCCCC"></FooterStyle>
-					<SelectedItemStyle Font-Bold="True" ForeColor="White" BackColor="#008A8C"></SelectedItemStyle>
-					<AlternatingItemStyle BackColor="#EEEEEE"></AlternatingItemStyle>
-					<ItemStyle Font-Size="X-Small" ForeColor="Black" BackColor="#EEEEEE"></ItemStyle>
-					<HeaderStyle Font-Size="X-Small" Font-Bold="True" HorizontalAlign="Center" ForeColor="White"
-						BackColor="#699BCD"></HeaderStyle>
-					<Columns>
-						<asp:TemplateColumn HeaderText="Project">
-							<HeaderStyle Width="13%"></HeaderStyle>
-							<ItemTemplate>
-								<asp:HyperLink id="hyplnkProject" runat="server"></asp:HyperLink>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:TemplateColumn HeaderText="Project Type">
-							<ItemTemplate>
-								<asp:Label ID="lblProjectType" runat="server"></asp:Label>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:TemplateColumn HeaderText="Activity">
-							<HeaderStyle></HeaderStyle>
-							<ItemTemplate>
-								<asp:HyperLink id="hyplnkActivity" runat="server"></asp:HyperLink>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:TemplateColumn HeaderText="Description">
-							<HeaderStyle></HeaderStyle>
-							<ItemTemplate>
-								<asp:Label id="lblDescription" runat="server"></asp:Label>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:TemplateColumn HeaderText="Other Attributes">
-							<ItemTemplate>
-								<asp:Label ID="lblOtherAttributes" runat="server"></asp:Label>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:TemplateColumn HeaderText="Reference">
-							<HeaderStyle></HeaderStyle>
-							<ItemTemplate>
-								<asp:Label id="lblReference" runat="server"></asp:Label>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:TemplateColumn HeaderText="Balance&lt;br&gt;(ACT+ENC)&lt;br&gt;($)">
-							<HeaderStyle Width="14%"></HeaderStyle>
-							<ItemStyle HorizontalAlign="Right"></ItemStyle>
-							<ItemTemplate>
-								<asp:Label id="lblBalance" runat="server"></asp:Label>
-							</ItemTemplate>
-						</asp:TemplateColumn>
-						<asp:BoundColumn Visible="False" DataField="fld_Project_Code" HeaderText="Project Code"></asp:BoundColumn>
-					</Columns>
-					<PagerStyle Font-Size="X-Small" HorizontalAlign="Center" ForeColor="Black" Position="TopAndBottom"
-						BackColor="White" Mode="NumericPages"></PagerStyle>
-				</asp:datagrid>
+				<!--- change added to GridLines=="both"-->
+				<div style="margin-left: auto; margin-right: auto; width: 80%;">
+					<font face="Verdana" size="1"><strong>Paging: <asp:LinkButton ID="likPaging" runat="server">Off</asp:LinkButton></strong></font>
+				</div>	
+				 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+					 <ContentTemplate>
+						 <br />
+						 <asp:DataGrid ID="dgProjects" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="Black" BorderWidth="1px" CellPadding="3" cssclass="GridViewStyle" Font-Names="Verdana" GridLines="Both" HorizontalAlign="Center" PageSize="50" Width="80%">
+							 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+							 <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+							 <AlternatingItemStyle BackColor="#EEEEEE" />
+							 <ItemStyle BackColor="#EEEEEE" Font-Size="X-Small" ForeColor="Black" />
+							 <HeaderStyle BackColor="#699BCD" Font-Bold="True" Font-Size="X-Small" ForeColor="White" HorizontalAlign="Center" />
+							 <Columns>
+								 <asp:TemplateColumn HeaderText="Project">
+									 <HeaderStyle Width="13%" />
+									 <ItemTemplate>
+										 <asp:HyperLink ID="hyplnkProject" runat="server"></asp:HyperLink>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:TemplateColumn HeaderText="Project Type">
+									 <ItemTemplate>
+										 <asp:Label ID="lblProjectType" runat="server"></asp:Label>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:TemplateColumn HeaderText="Activity">
+									 <HeaderStyle />
+									 <ItemTemplate>
+										 <asp:HyperLink ID="hyplnkActivity" runat="server"></asp:HyperLink>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:TemplateColumn HeaderText="Description">
+									 <HeaderStyle />
+									 <ItemTemplate>
+										 <asp:Label ID="lblDescription" runat="server"></asp:Label>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:TemplateColumn HeaderText="Other Attributes">
+									 <ItemTemplate>
+										 <asp:Label ID="lblOtherAttributes" runat="server"></asp:Label>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:TemplateColumn HeaderText="Reference">
+									 <HeaderStyle />
+									 <ItemTemplate>
+										 <asp:Label ID="lblReference" runat="server"></asp:Label>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:TemplateColumn HeaderText="Balance&lt;br&gt;(ACT+ENC)&lt;br&gt;($)">
+									 <HeaderStyle Width="14%" />
+									 <ItemStyle HorizontalAlign="Right" />
+									 <ItemTemplate>
+										 <asp:Label ID="lblBalance" runat="server"></asp:Label>
+									 </ItemTemplate>
+								 </asp:TemplateColumn>
+								 <asp:BoundColumn DataField="fld_Project_Code" HeaderText="Project Code" Visible="False"></asp:BoundColumn>
+							 </Columns>
+							 <PagerStyle BackColor="White" Font-Size="X-Small" ForeColor="Black" HorizontalAlign="Center" Mode="NumericPages" Position="TopAndBottom" />
+						 </asp:DataGrid>
+					 </ContentTemplate>
+				</asp:UpdatePanel>
 				<P>
 					<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="80%" border="0" align="center">
 						<TR>

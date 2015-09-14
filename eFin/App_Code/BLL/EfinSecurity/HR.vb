@@ -189,7 +189,7 @@ Public Class HR
     Public Shared Function GetPersonalInfo(ByVal ucid As String) As HR
         ' Get Trust Holder Information
 
-        Dim StrDepart_ID, StrDepartName As String
+        'Dim StrDepart_ID, StrDepartName As String
 
         Dim SPARusers As HR = Nothing
 

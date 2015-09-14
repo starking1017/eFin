@@ -115,11 +115,11 @@ Partial Class Forms_Researcher_frm_AccountDetails
 
                 If Request.QueryString("category") = "PROJECTSINGLEACCOUNT" Then
                     arrParams.Add(Session("ACCTID"))
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectSingleAccountDetails_1", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectSingleAccountDetails", arrParams)
 
                 Else
                     arrParams.Add(AccountsHeaderControl.GetProjectID)
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectAllAccountDetails_1", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectAllAccountDetails", arrParams)
                 End If
 
                 LoadDdlAccountList(strAccount)
@@ -141,10 +141,10 @@ Partial Class Forms_Researcher_frm_AccountDetails
 
                 If Request.QueryString("category") = "ACTIVITYSINGLEACCOUNT" Then
                     arrParams.Add(Session("ACCTID"))
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivitySingleAccountDetails_1", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivitySingleAccountDetails", arrParams)
                 Else
                     arrParams.Add(AccountsHeaderControl.GetProjectID)
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivityAllAccountDetails_1", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivityAllAccountDetails", arrParams)
                 End If
 
                 LoadDdlAccountList(strAccount)
@@ -191,17 +191,19 @@ Partial Class Forms_Researcher_frm_AccountDetails
 
         If Session("AllarrActCode") IsNot Nothing Then
             Dim ArrayList As ArrayList = CType(Session("AllarrActCode"), ArrayList)
-            ArrayList.Sort()
-            ddlAccount.DataSource = ArrayList
-            ddlAccount.DataBind()
+            If ArrayList.Count > 0 Then
+                ArrayList.Sort()
+                ddlAccount.DataSource = ArrayList
+                ddlAccount.DataBind()
 
-            Dim nSelectindex As Integer = 0
-            For i = 0 To ddlAccount.Items.Count - 1
-                If ddlAccount.Items(i).ToString().Substring(0, 5) = strAccount Then
-                    nSelectindex = i
-                End If
-            Next
-            ddlAccount.SelectedIndex = nSelectindex
+                Dim nSelectindex As Integer = 0
+                For i = 0 To ddlAccount.Items.Count - 1
+                    If ddlAccount.Items(i).ToString().Substring(0, 5) = strAccount Then
+                        nSelectindex = i
+                    End If
+                Next
+                ddlAccount.SelectedIndex = nSelectindex
+            End If
         End If
 
     End Sub
@@ -277,9 +279,9 @@ Partial Class Forms_Researcher_frm_AccountDetails
                     e.Item.Style("font-weight") = "bold"
 
                     If (strActual.Contains("(")) Then
-                        e.Item.Cells(14).BackColor = Drawing.Color.FromArgb(205, 69, 69)
-                    ElseIf Decimal.Parse(strActual) <> 0 Then
                         e.Item.Cells(14).BackColor = Drawing.Color.FromArgb(197, 227, 191)
+                    ElseIf Decimal.Parse(strActual) <> 0 Then
+                        e.Item.Cells(14).BackColor = Drawing.Color.FromArgb(205, 69, 69)
                     End If
                     strJournalDate = ""
                 End If
@@ -429,5 +431,24 @@ Partial Class Forms_Researcher_frm_AccountDetails
         dgrdAccounts.Attributes("SortExpression") = SortExpression
         dgrdAccounts.Attributes("SortDirection") = SortDirection
         BindData(CType(Session("dtAccounts"), DataTable))
+    End Sub
+
+    Private Sub Page_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
+
+        Dim dt As DataTable
+        If (Not Session("dtAwardData") Is Nothing) Then
+            dt = CType(Session("dtAwardData"), DataTable).Copy()
+            dt.Rows.RemoveAt(dt.Rows.Count - 1)
+            Dim row As DataRow = dt.NewRow()
+            row.Item(0) = "-- Select Year --"
+            dt.Rows.InsertAt(row, 0)
+            Session("dtProjectYear") = dt
+
+            AccountsHeaderControl.GetPHControlProjectYear().DataSource = dt
+            AccountsHeaderControl.GetPHControlProjectYear().DataTextField = "fld_Year"
+            AccountsHeaderControl.GetPHControlProjectYear().DataValueField = "fld_Year"
+            AccountsHeaderControl.GetPHControlProjectYear().DataBind()
+        End If
+
     End Sub
 End Class

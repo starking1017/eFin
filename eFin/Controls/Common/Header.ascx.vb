@@ -11,6 +11,7 @@ Partial Class Controls_Common_Header
     Public Event Search As EventHandler
     Public Event UpdateEmployeeDetail As EventHandler
 
+
 #Region "Property Functions"
     Public ReadOnly Property GetStartDate() As String
         Get
@@ -32,8 +33,8 @@ Partial Class Controls_Common_Header
             Return Me._strProjectID
         End Get
     End Property
-    Public WriteOnly Property SetProjectID()
-        Set(ByVal value)
+    Public WriteOnly Property SetProjectID() As String
+        Set(ByVal value As String)
             Me.txtStartAtProject.Text = value
         End Set
     End Property
@@ -168,7 +169,10 @@ Partial Class Controls_Common_Header
             ddlDepartment.Items.Insert(0, fstItem)
             ddlDepartment.SelectedIndex = 0
 
-            InitializeDate()    ' Initialized the header date and set date to current fiscal year
+            If Not Session("ProjectPeriod") Is Nothing Then
+                InitializeDate()    ' Initialized the header date and set date to current fiscal year
+            End If
+
             If Session("ProjectSearch") IsNot Nothing Then
                 ProjectSearch = Session("ProjectSearch")
             End If
@@ -190,11 +194,11 @@ Partial Class Controls_Common_Header
             End If
 
             ' Display the period the user is currently retrieving information for
-            Dim period As BLL.Period = CType(BLL.Period.GetPeriodFromTheSession(), BLL.Period)
+            Dim period As BLL.Period = BLL.Period.GetPeriodFromTheSession()
             If Not period Is Nothing Then
                 Me.lblPeriod.Text = period.StartDate.Insert(4, "/") + " - " + period.EndDate.Insert(4, "/")
             End If
-           
+
             Dim category As String = CType(Session("Category"), String)
 
             ' Set header properties based on category
@@ -299,12 +303,13 @@ Partial Class Controls_Common_Header
 
     End Sub
 
-    Private Sub Page_LoadComplete(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim nCurrYear As Integer = BLL.Header.GetAsAtYear()
+    Private Sub Page_PreRender(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.PreRender
+        ReInitializeDate()
     End Sub
 
     ' Initializes the control with dates from 1993 to current date
     Public Sub InitializeDate()
+
         Dim nCurrYear As Integer = BLL.Header.GetAsAtYear()
         Dim nCurrMonth As Integer = BLL.Header.GetAsAtMonth()
         Dim i As Integer
@@ -340,11 +345,50 @@ Partial Class Controls_Common_Header
 
     End Sub
 
+    ' ReInitializes the control with dates from 1993 to project expiry date
+    Public Sub ReInitializeDate()
+
+        If Not IsPostBack And Not Session("ProjectPeriod") Is Nothing Then
+            Dim strExpiryDate As String = BLL.ProjectPeriod.GetBudgetLastDate(GetAsAtDate(), BLL.Header.GetMaxExtendYear())
+
+            Dim nCurrYear As Integer = CType(strExpiryDate.Substring(0, 4), Integer)
+            Dim nCurrMonth As Integer = CType(strExpiryDate.Substring(4, 2), Integer)
+
+            Dim i As Integer
+
+            Me.ddlEndYear.Items.Clear()
+            Me.ddlStartYear.Items.Clear()
+
+            ' Dynamically add the years for the start and end year drop down list
+            For i = 1993 To nCurrYear
+                Me.ddlStartYear.Items.Add(New ListItem(i.ToString, i.ToString))
+                Me.ddlEndYear.Items.Add(New ListItem(i.ToString, i.ToString))
+            Next
+
+            ' Set the start and end date of the control if coming from another page.
+            Dim strStartDate As String = BLL.Period.GetPeriodFromTheSession.StartDate
+            Dim strEndDate As String = BLL.Period.GetPeriodFromTheSession.EndDate
+
+            ' If coming from another page, set the header to the start date that was previously chosen on the previous page
+            If Not strStartDate Is Nothing Then
+                Me.ddlStartYear.SelectedValue = strStartDate.Substring(0, 4)
+                Me.ddlStartMonth.SelectedValue = strStartDate.Substring(4)
+            End If
+
+            ' If coming from another page, set the header to the end date that was previously chosen on the previous page
+            If Not strEndDate Is Nothing Then
+                Me.ddlEndYear.SelectedValue = strEndDate.Substring(0, 4)
+                Me.ddlEndMonth.SelectedValue = strEndDate.Substring(4)
+            End If
+
+        End If
+
+    End Sub
+
     Private Sub SetToProjectPeriod()
 
         ' Set the start and end date of the control if coming from another page.
         Dim strStartDate As String = BLL.ProjectPeriod.GetProjectPeriodFromTheSession.StartDate
-        Dim strEndDate As String = BLL.ProjectPeriod.GetProjectPeriodFromTheSession.EndDate
 
         ' If coming from another page, set the header to the start date that was previously chosen on the previous page
         If Not strStartDate Is Nothing Then
@@ -353,10 +397,12 @@ Partial Class Controls_Common_Header
         End If
 
         ' If coming from another page, set the header to the end date that was previously chosen on the previous page
-        Dim nCurrYear As Integer = BLL.Header.GetAsAtYear()
-        Dim nCurrMonth As Integer = BLL.Header.GetAsAtMonth()
+        Dim strExpiryDate As String = BLL.ProjectPeriod.GetBudgetLastDate(GetAsAtDate(), BLL.Header.GetMaxExtendYear())
 
-        Me.ddlEndYear.SelectedIndex = ddlEndYear.Items.IndexOf(ddlEndYear.Items.FindByValue(nCurrYear))
+        Dim nCurrYear As Integer = CType(strExpiryDate.Substring(0, 4), Integer)
+        Dim nCurrMonth As Integer = CType(strExpiryDate.Substring(4, 2), Integer)
+
+        Me.ddlEndYear.SelectedIndex = ddlEndYear.Items.IndexOf(ddlEndYear.Items.FindByValue(nCurrYear.ToString()))
         Me.ddlEndMonth.SelectedIndex = ddlEndMonth.Items.IndexOf(ddlEndMonth.Items.FindByValue(nCurrMonth.ToString().PadLeft(2, "0")))
 
     End Sub
@@ -376,17 +422,17 @@ Partial Class Controls_Common_Header
             Return
         End If
 
-        If nStartDate > Integer.Parse(Me.GetAsAtDate) Then
-            Me.lblError.Text = "Start date cannont be after current date, please reselect date."
+        'If nStartDate > Integer.Parse(Me.GetAsAtDate) Then
+        '    Me.lblError.Text = "Start date cannont be after current date, please reselect date."
 
-            Return
-        End If
+        '    Return
+        'End If
 
-        If nEndDate > Integer.Parse(Me.GetAsAtDate) Then
-            Me.lblError.Text = "eFin currently has information up until " + BLL.Header.GetAsAtDate.ToLongDateString + ", please reselect date."
+        'If nEndDate > Integer.Parse(Me.GetAsAtDate) Then '+ nExtendYear * 100 Then
+        '    Me.lblError.Text = "eFin currently has information up until " + BLL.Header.GetAsAtDate.ToLongDateString + ", please reselect date."
 
-            Return
-        End If
+        'Return
+        'End If
 
         Me.lblError.Text = ""
 
@@ -526,6 +572,7 @@ Partial Class Controls_Common_Header
     End Sub
 
     Protected Sub ddlProjectYear_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlProjectYear.SelectedIndexChanged
+        RaiseEvent UpdateEmployeeDetail(Me, e)
         lnkBtnRefresh_Click(Me, e)
     End Sub
 

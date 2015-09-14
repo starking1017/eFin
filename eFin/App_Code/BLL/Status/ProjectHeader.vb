@@ -119,43 +119,43 @@ Namespace BLL.Status
         End Property
 
         ''' Line 1, elements , Project Holders Status
-        Public ReadOnly Property Name()
+        Public ReadOnly Property Name() As String
             Get
                 Return Me._name
             End Get
         End Property
 
-        Public ReadOnly Property Status()
+        Public ReadOnly Property Status() As String
             Get
                 Return Me._status
             End Get
         End Property
 
-        Public ReadOnly Property Dept()
+        Public ReadOnly Property Dept() As String
             Get
                 Return Me._dept
             End Get
         End Property
 
-        Public ReadOnly Property ContactInfo()
+        Public ReadOnly Property ContactInfo() As String
             Get
                 Return Me._contactinformation
             End Get
         End Property
 
-        Public ReadOnly Property EmailforEC()
+        Public ReadOnly Property EmailforEC() As String
             Get
                 Return Me._emailforEC
             End Get
         End Property
 
-        Public ReadOnly Property Phone()
+        Public ReadOnly Property Phone() As String
             Get
                 Return Me._phone
             End Get
         End Property
 
-        Public ReadOnly Property NSERC()
+        Public ReadOnly Property NSERC() As String
             Get
                 Return Me._nsercpin
             End Get
@@ -163,25 +163,25 @@ Namespace BLL.Status
 
 
         ''' Line 2, elements, other affiliation 
-        Public ReadOnly Property OtherDept()
+        Public ReadOnly Property OtherDept() As String
             Get
                 Return Me._otherdept
             End Get
         End Property
 
-        Public ReadOnly Property Institute()
+        Public ReadOnly Property Institute() As String
             Get
                 Return Me._institutecentre
             End Get
         End Property
 
-        Public ReadOnly Property ResearchGroup()
+        Public ReadOnly Property ResearchGroup() As String
             Get
                 Return Me._researchgroup
             End Get
         End Property
 
-        Public ReadOnly Property Location()
+        Public ReadOnly Property Location() As String
             Get
                 Return Me._location
             End Get
@@ -189,25 +189,25 @@ Namespace BLL.Status
 
 
         ''' Line 3, Project Classifications 
-        Public ReadOnly Property GeneralPurpose()
+        Public ReadOnly Property GeneralPurpose() As String
             Get
                 Return Me._generalpurpose
             End Get
         End Property
 
-        Public ReadOnly Property PurposeOfFunds()
+        Public ReadOnly Property PurposeOfFunds() As String
             Get
                 Return Me._purposeoffunds
             End Get
         End Property
 
-        Public ReadOnly Property SubPurpose()
+        Public ReadOnly Property SubPurpose() As String
             Get
                 Return Me._subpurpose
             End Get
         End Property
 
-        Public ReadOnly Property AwardStatusName()
+        Public ReadOnly Property AwardStatusName() As String
             Get
                 Return Me._awardstatusname
             End Get
@@ -215,7 +215,7 @@ Namespace BLL.Status
 
 
         ''' Line 4, Project Title 
-        Public ReadOnly Property Title()
+        Public ReadOnly Property Title() As String
             Get
                 Return Me._title
             End Get
@@ -229,7 +229,7 @@ Namespace BLL.Status
             End Get
         End Property
 
-        Public ReadOnly Property ReviewDate()
+        Public ReadOnly Property ReviewDate() As String
             Get
                 Return Me._reviewdate
             End Get
@@ -237,31 +237,31 @@ Namespace BLL.Status
 
 
         ''' Line 6, Project funding
-        Public ReadOnly Property SponsorName()
+        Public ReadOnly Property SponsorName() As String
             Get
                 Return Me._sponsorname
             End Get
         End Property
 
-        Public ReadOnly Property Reference1()
+        Public ReadOnly Property Reference1() As String
             Get
                 Return Me._reference1
             End Get
         End Property
 
-        Public ReadOnly Property Reference2()
+        Public ReadOnly Property Reference2() As String
             Get
                 Return Me._reference2
             End Get
         End Property
 
-        Public ReadOnly Property PrimarySource()
+        Public ReadOnly Property PrimarySource() As String
             Get
                 Return Me._primarysource
             End Get
         End Property
 
-        Public ReadOnly Property SponsorSource()
+        Public ReadOnly Property SponsorSource() As String
             Get
                 Return Me._sponsorsource
             End Get
@@ -270,13 +270,13 @@ Namespace BLL.Status
 
         ''' Line 7, Progress Reporting by Project Holder
         ''' It needs to be clarified , June 8, 2005 
-        Public ReadOnly Property ProgressReporting()
+        Public ReadOnly Property ProgressReporting() As String
             Get
                 Return Me._progressreporting
             End Get
         End Property
 
-        Public ReadOnly Property ProjectHolderBilling()
+        Public ReadOnly Property ProjectHolderBilling() As String
             Get
                 Return Me._projectholderbilling
             End Get
@@ -284,13 +284,13 @@ Namespace BLL.Status
 
 
         ''' Line 8, Billing
-        Public ReadOnly Property BillingFreqDesc()
+        Public ReadOnly Property BillingFreqDesc() As String
             Get
                 Return Me._billingfreqdesc
             End Get
         End Property
 
-        Public ReadOnly Property BillingCurrency()
+        Public ReadOnly Property BillingCurrency() As String
             Get
                 Return Me._billingcurrency
             End Get
@@ -298,19 +298,19 @@ Namespace BLL.Status
 
 
         ''' Line 9 , Agency Reporting
-        Public ReadOnly Property SponsorReportingFreqDesc()
+        Public ReadOnly Property SponsorReportingFreqDesc() As String
             Get
                 Return Me._sponsorreportingfreqdesc
             End Get
         End Property
 
-        Public ReadOnly Property SponsorReportFormat()
+        Public ReadOnly Property SponsorReportFormat() As String
             Get
                 Return Me._sponsorreportformat
             End Get
         End Property
 
-        Public ReadOnly Property SubReportFormat()
+        Public ReadOnly Property SubReportFormat() As String
             Get
                 Return Me._subreportformat
             End Get
@@ -318,7 +318,7 @@ Namespace BLL.Status
 
 
         ''' Line 10, Equipment Ownership
-        Public ReadOnly Property Ownership()
+        Public ReadOnly Property Ownership() As String
             Get
                 Return Me._ownership
             End Get
@@ -326,41 +326,41 @@ Namespace BLL.Status
 
 
         ''' Line 11, Certification 
-        Public ReadOnly Property HumanCertification()
+        Public ReadOnly Property HumanCertification() As String
             Get
                 Return Me._humanCertification
             End Get
         End Property
 
-        Public ReadOnly Property AnimalCertification()
+        Public ReadOnly Property AnimalCertification() As String
             Get
                 Return Me._animalCertification
             End Get
         End Property
 
-        Public ReadOnly Property BioCertification()
+        Public ReadOnly Property BioCertification() As String
             Get
                 Return Me._bioCertification
             End Get
         End Property
 
-        Public ReadOnly Property AuthorizedOverExpPeriod()
+        Public ReadOnly Property AuthorizedOverExpPeriod() As String
             Get
                 Return Me._authorizedOverExpenditurePeriod
             End Get
         End Property
 
-        Public ReadOnly Property AuthorizedOverExpAmount()
+        Public ReadOnly Property AuthorizedOverExpAmount() As String
             Get
                 Return Me._authorizedOverExpenditureAmount
             End Get
         End Property
-        Public ReadOnly Property AuthorizedOEStartDate()
+        Public ReadOnly Property AuthorizedOEStartDate() As String
             Get
                 Return Me._authorizedOEStartDate
             End Get
         End Property
-        Public ReadOnly Property AuthorizedOEEndDate()
+        Public ReadOnly Property AuthorizedOEEndDate() As String
             Get
                 Return Me._authorizedOEEndDate
             End Get

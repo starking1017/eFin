@@ -21,8 +21,8 @@
 					</asp:TextBox>
 				</EditItemTemplate>
 				<ItemTemplate>
-					<asp:HyperLink ID="hypType" runat="server" Target="_top">HyperLink</asp:HyperLink>
-					<asp:Label ID="lblType" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Member_Type") %>' Visible="False"></asp:Label>
+					<asp:HyperLink ID="hypType" runat="server" Target="_top" Visible="False">HyperLink</asp:HyperLink>
+					<asp:Label ID="lblType" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Member_Type") %>'></asp:Label>
 				</ItemTemplate>
 			</asp:TemplateColumn>
 			<asp:TemplateColumn HeaderText="Contact Information">

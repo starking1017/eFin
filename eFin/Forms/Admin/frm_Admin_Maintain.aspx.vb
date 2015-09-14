@@ -84,7 +84,7 @@ Partial Class Forms_Admin_frm_Admin_Maintain
 
         GetPersonalInfo(Me.txtUcid.Text.Trim)
     End Sub
-    Private Function GetPersonalInfo(ByVal UCID As String)
+    Private Sub GetPersonalInfo(ByVal UCID As String)
         Try
             Dim data As HR = HR.GetPersonalInfo(UCID)
             If Not data Is Nothing Then
@@ -105,7 +105,7 @@ Partial Class Forms_Admin_frm_Admin_Maintain
 
         Catch ex As Exception
         End Try
-    End Function
+    End Sub
     Protected Sub btSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btSave.Click
         Dim admin As New AppUser
         admin.Ucid = txtUcid.Text

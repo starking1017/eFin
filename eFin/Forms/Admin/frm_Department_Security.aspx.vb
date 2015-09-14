@@ -230,7 +230,7 @@ Partial Class Forms_Admin_frm_Department_Security
         GetPersonalInfo(Me.txtUCID.Text.Trim)
     End Sub
 
-    Private Function GetPersonalInfo(ByVal UCID As String)
+    Private Sub GetPersonalInfo(ByVal UCID As String)
         Try
             Dim data As HR = HR.GetPersonalInfo(UCID)
             If Not data Is Nothing Then
@@ -252,7 +252,7 @@ Partial Class Forms_Admin_frm_Department_Security
 
         Catch ex As Exception
         End Try
-    End Function
+    End Sub
 
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
         lblMsg.Text = String.Empty

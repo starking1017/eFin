@@ -43,6 +43,12 @@ Partial Class Controls_Common_AccountsHeader
             Return Me._strAsAtDate
         End Get
     End Property
+
+    Public ReadOnly Property GetPHControlProjectYear() As System.Web.UI.WebControls.DropDownList
+        Get
+            Return Me.ddlProjectYear
+        End Get
+    End Property
 #End Region
     Public Event UpdateAcoountDetail As EventHandler
 
@@ -120,6 +126,7 @@ Partial Class Controls_Common_AccountsHeader
 
     ' Initializes the control with dates from 1993 to current date
     Public Sub InitializeDate()
+#If False Then
         Dim nCurrYear As Integer = BLL.Header.GetAsAtYear()
         Dim nCurrMonth As Integer = BLL.Header.GetAsAtMonth()
         Dim i As Integer
@@ -152,8 +159,42 @@ Partial Class Controls_Common_AccountsHeader
         Me.ddlEndMonth.SelectedIndex = BLL.Header.GetAsAtMonth() - 1
 
         'End If
+#Else
+        Dim strExpiryDate As String = BLL.ProjectPeriod.GetBudgetLastDate(GetAsAtDate(), BLL.Header.GetMaxExtendYear())
 
+        Dim nCurrYear As Integer = CType(strExpiryDate.Substring(0, 4), Integer)
+        Dim nCurrMonth As Integer = CType(strExpiryDate.Substring(4, 2), Integer)
 
+        Dim i As Integer
+
+        Me.ddlEndYear.Items.Clear()
+        Me.ddlStartYear.Items.Clear()
+
+        ' Dynamically add the years for the start and end year drop down list
+        For i = 1993 To nCurrYear
+            Me.ddlStartYear.Items.Add(New ListItem(i.ToString, i.ToString))
+            Me.ddlEndYear.Items.Add(New ListItem(i.ToString, i.ToString))
+        Next
+
+        Me.ddlEndYear.SelectedValue = BLL.Header.GetAsAtYear()  ' Set end year to current year
+
+        ' Each fiscal year starts in April
+        ' If the current month is before April, the beginning fiscal year would be the year before
+        ' If the current month April or after, the beginning fiscal year would be the current year
+        If nCurrMonth <= 4 Then
+            Me.ddlStartYear.SelectedValue = (BLL.Header.GetAsAtYear() - 1).ToString
+        Else
+            Me.ddlStartYear.SelectedValue = BLL.Header.GetAsAtYear().ToString
+        End If
+
+        'If nCurrYear = 2005 Then
+        '    Me.ddlEndMonth.SelectedIndex = 9
+
+        'Else
+        Me.ddlEndMonth.SelectedIndex = BLL.Header.GetAsAtMonth() - 1
+
+        'End If
+#End If
     End Sub
 
 
@@ -170,11 +211,11 @@ Partial Class Controls_Common_AccountsHeader
             Return
         End If
 
-        If nStartDate > Integer.Parse(Me.GetAsAtDate) Then
-            Me.lblError.Text = "Start date cannont be after current date, please reselect date."
+        'If nStartDate > Integer.Parse(Me.GetAsAtDate) Then
+        '    Me.lblError.Text = "Start date cannont be after current date, please reselect date."
 
-            Return
-        End If
+        '    Return
+        'End If
 
         If nEndDate > Integer.Parse(Me.GetAsAtDate) Then
             Me.lblError.Text = "eFin currently has information up until " + BLL.Header.GetAsAtDate.ToLongDateString + ", please reselect date."
@@ -343,4 +384,24 @@ Partial Class Controls_Common_AccountsHeader
         RaiseEvent UpdateAcoountDetail(Me, e)
         lnkRefresh(Me, EventArgs.Empty)
     End Sub
+
+
+    Protected Sub ddlProjectYear_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlProjectYear.SelectedIndexChanged
+        SetPojectPeriod()
+        RaiseEvent UpdateAcoountDetail(Me, e)
+        lnkRefresh(Me, EventArgs.Empty)
+    End Sub
+
+    Protected Sub SetPojectPeriod()
+
+        If Not (ddlProjectYear.SelectedValue = "") Then
+
+            Me.ddlStartYear.SelectedValue = ddlProjectYear.SelectedValue.Substring(0, 4)
+            Me.ddlStartMonth.SelectedValue = ddlProjectYear.SelectedValue.Substring(5, 2)
+
+            Me.ddlEndYear.SelectedValue = ddlProjectYear.SelectedValue.Substring(10, 4)
+            Me.ddlEndMonth.SelectedValue = ddlProjectYear.SelectedValue.Substring(15, 2)
+        End If
+    End Sub
+
 End Class

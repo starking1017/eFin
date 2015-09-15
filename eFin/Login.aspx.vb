@@ -24,7 +24,7 @@ Partial Class Login
             Session("casIdentity") = casIdentity
         End If
         'For testing purpose by David 
-        casIdentity.UcidList.Clear()
+        'casIdentity.UcidList.Clear()
         'casIdentity.UcidList.Add("00781699") ' Mary Lou
         'casIdentity.UcidList.Add("00276349")
         'casIdentity.UcidList.Add("10001614") 'Andrei
@@ -32,7 +32,7 @@ Partial Class Login
         'casIdentity.UcidList.Add("04158538") 'testing 
         'casIdentity.UcidList.Add("00237749") 'testing 
         'casIdentity.UcidList.Add("10177206") 'testing 
-        casIdentity.UcidList.Add("04091814") 'testing 
+        'casIdentity.UcidList.Add("04091814") 'testing 
 
         '-------------------------
 

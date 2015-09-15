@@ -92,7 +92,7 @@ Partial Class Forms_Researcher_frm_ActSummaryByAccount
         arrParams.Add(endDate)
         arrParams.Add(HeaderControl.GetProjectID)
 
-        dt = BLL.ProjectSummaryByAccount.LoadProjectSummaryByAccount("SELECT", "dbo.eFinsp_LoadActivitySummaryByAccountListsWithSecurity", arrParams) ' With start at account feature
+        dt = BLL.ProjectSummaryByAccount.LoadProjectSummaryByAccount("SELECT", "dbo.eFinsp_LoadActivitySummaryByAccountListsWithSecurity_1", arrParams) ' With start at account feature
 
         ' Bind data to datagrid
         If Not dt Is Nothing Then

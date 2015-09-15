@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ER-eFIN-V5", "eFin", "{92C98E0C-82AB-4E1E-9711-E72F099DDA05}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ER-eFIN-V5", "eFin\", "{92C98E0C-82AB-4E1E-9711-E72F099DDA05}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""
 		SccAuxPath = ""

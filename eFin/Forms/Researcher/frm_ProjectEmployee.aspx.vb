@@ -106,7 +106,7 @@ Partial Class Forms_Researcher_frm_ProjectEmployee
             arrParams.Add(endDate)
             arrParams.Add(HeaderControl.GetProjectID)
 
-            dt = BLL.ProjectEmployee.LoadProjectEmployee("SELECT", "dbo.eFinsp_LoadProjectEmployee", arrParams)
+            dt = BLL.ProjectEmployee.LoadProjectEmployee("SELECT", "dbo.eFinsp_LoadProjectEmployee_1", arrParams)
 
             If Not dt Is Nothing Then
                 Session("dtEmployee") = dt

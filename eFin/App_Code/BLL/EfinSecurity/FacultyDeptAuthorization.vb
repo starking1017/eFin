@@ -14,7 +14,7 @@ Public Class FacultyDeptAuthorization
             .Add("faculty")
             .Add("")
         End With
-        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept", al)
+        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept_1", al)
 
     End Function
     Public Shared Function DepartmentTable() As DataTable
@@ -24,7 +24,7 @@ Public Class FacultyDeptAuthorization
             .Add("department")
             .Add("")
         End With
-        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept", al)
+        Return DAL.GenericDBOperation.GenericDataBaseOperationDB("SELECT", "dbo.eFinsp_LoadFacDept_1", al)
     End Function
 
     Public Function Search() As DataTable

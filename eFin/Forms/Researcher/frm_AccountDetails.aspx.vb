@@ -115,11 +115,11 @@ Partial Class Forms_Researcher_frm_AccountDetails
 
                 If Request.QueryString("category") = "PROJECTSINGLEACCOUNT" Then
                     arrParams.Add(Session("ACCTID"))
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectSingleAccountDetails", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectSingleAccountDetails_1", arrParams)
 
                 Else
                     arrParams.Add(AccountsHeaderControl.GetProjectID)
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectAllAccountDetails", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadProjectAllAccountDetails_1", arrParams)
                 End If
 
                 LoadDdlAccountList(strAccount)
@@ -141,10 +141,10 @@ Partial Class Forms_Researcher_frm_AccountDetails
 
                 If Request.QueryString("category") = "ACTIVITYSINGLEACCOUNT" Then
                     arrParams.Add(Session("ACCTID"))
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivitySingleAccountDetails", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivitySingleAccountDetails_1", arrParams)
                 Else
                     arrParams.Add(AccountsHeaderControl.GetProjectID)
-                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivityAllAccountDetails", arrParams)
+                    dt = BLL.AccountDetails.LoadAccountDetails("SELECT", "dbo.eFinsp_LoadActivityAllAccountDetails_1", arrParams)
                 End If
 
                 LoadDdlAccountList(strAccount)

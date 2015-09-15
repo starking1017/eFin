@@ -478,7 +478,9 @@ Partial Class Controls_Common_Header
         ddlFaculty.ClearSelection()
         ddlFaculty.SelectedIndex = 0
 
-        ddlPI2.SelectedIndex = 0
+        If ddlPI2.Visible = True Or ddlPI2.Items.Count > 0 Then
+            ddlPI2.SelectedIndex = 0
+        End If
         txtKeyWord.Text = ""
 
         Session("ProjectSearch") = ProjectSearch

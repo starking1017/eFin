@@ -267,7 +267,7 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add("00000")
 
                 ' Retrieve summary project financial summary, security is handle on database side
-                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadSummaryProjectFinancialSummary", arrParams)
+                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadSummaryProjectFinancialSummary_1", arrParams)
 
             Case "CP"   ' Child Project
                 Dim strCPID As String = CType(Session("CPID"), String)
@@ -281,7 +281,7 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add("00000")
 
                 ' Retrieve child project financial summary, security is handle on database side
-                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectFinancialSummary", arrParams)
+                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadProjectFinancialSummary_1", arrParams)
 
             Case "ACT"  ' Activity
                 Dim strCPID As String = CType(Session("CPID"), String)
@@ -297,7 +297,7 @@ Partial Public Class Controls_FinancialSummary
                 arrParams.Add(strACTID) '@actid varchar(20)
 
                 ' Retrieve activity financial summary, security is handle on database side
-                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadActivityFinancialSummary", arrParams)
+                dt = BLL.FinancialSummary.LoadFinancialSummary("SELECT", "dbo.eFinsp_LoadActivityFinancialSummary_1", arrParams)
 
         End Select
 
@@ -1083,7 +1083,7 @@ Partial Public Class Controls_FinancialSummary
                 Dim strBurnRate As String = CType((dTotalExpend / nMonthCount), String)
                 strBurnRate = String.Format("{0:F2}", Decimal.Parse(strBurnRate)).ToString()
                 strBurnRate = String.Format("{0:n}", Decimal.Parse(strBurnRate))
-                lblBurnRate1.Text = "$" + strBurnRate + " / month"
+                lblBurnRate1.Text = "$" + strBurnRate + " / Month"
 
                 If strBurnRate <= 0 Then
                     lblZeroBalDate1.Text = "Infinity!"
@@ -1147,7 +1147,7 @@ Partial Public Class Controls_FinancialSummary
                 Dim strBurnRate As String = (dTotalExpend / nMonthCount).ToString()
                 strBurnRate = String.Format("{0:F2}", Decimal.Parse(strBurnRate)).ToString()
                 strBurnRate = String.Format("{0:n}", Decimal.Parse(strBurnRate))
-                lblBurnRate.Text = "$" + strBurnRate + " / month"
+                lblBurnRate.Text = "$" + strBurnRate + " / Month"
 
                 If strBurnRate <= 0 Then
                     lblZeroBalDate.Text = "Infinity!"

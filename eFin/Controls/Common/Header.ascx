@@ -56,7 +56,7 @@
 					<TR>
 						<TD vAlign="middle" noWrap align="center" >
 						    Projet Year:
-							<asp:dropdownlist id="ddlProjectYear" runat="server" AutoPostBack="True" OnClientClick="ShowProgressBar();"></asp:dropdownlist>
+							<asp:dropdownlist id="ddlProjectYear" runat="server" AutoPostBack="True" onchange="ShowProgressBar();"></asp:dropdownlist>
 						</TD>
 						<TD style="HEIGHT: 11px" noWrap>
 							<P align="center">
@@ -134,7 +134,7 @@
 					<asp:label id="lbPI0" Font-Bold="False" runat="server" Font-Size="X-Small">Project Status:</asp:label>
 							</td>
 							<td>
-								<asp:DropDownList ID="ddlStatus" runat="server" Width="300px">
+								<asp:DropDownList ID="ddlStatus" runat="server">
 									<asp:ListItem Selected="True" Value="ALL">--- ALL ---</asp:ListItem>
 									<asp:ListItem>Active</asp:ListItem>
 									<asp:ListItem>Closed</asp:ListItem>
@@ -147,7 +147,7 @@
 					<asp:label id="lbPI1" Font-Bold="False" runat="server" Font-Size="X-Small">Faculty:</asp:label>
 							</td>
 							<td>
-								<asp:DropDownList ID="ddlFaculty" runat="server" Width="300px">
+								<asp:DropDownList ID="ddlFaculty" runat="server">
 								</asp:DropDownList>
 							</td>
 						</tr>
@@ -156,7 +156,7 @@
 					<asp:label id="lbPI2" Font-Bold="False" runat="server" Font-Size="X-Small">Department:</asp:label>
 							</td>
 							<td>
-								<asp:DropDownList ID="ddlDepartment" runat="server" Width="300px">
+								<asp:DropDownList ID="ddlDepartment" runat="server">
 								</asp:DropDownList>
 							</td>
 							<td align="left">

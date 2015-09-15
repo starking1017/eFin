@@ -41,7 +41,7 @@
 							<HeaderStyle Font-Size="X-Small" Font-Bold="True" HorizontalAlign="Center" ForeColor="White"
 								BackColor="#699BCD"></HeaderStyle>
 							<Columns>
-								<asp:TemplateColumn HeaderText="Supplier / Customer / Employee">
+								<asp:TemplateColumn HeaderText="Supplier / Customer / Employee" SortExpression="EMPLID">
 									<ItemTemplate>
 										<asp:Label id="lblSupplier" runat="server"></asp:Label>
 									</ItemTemplate>
@@ -50,7 +50,7 @@
 									</EditItemTemplate>
 								</asp:TemplateColumn>
 								<asp:BoundColumn DataField="Desc" HeaderText="Description" SortExpression="Desc"></asp:BoundColumn>
-								<asp:TemplateColumn HeaderText="Fiscal Period">
+								<asp:TemplateColumn HeaderText="Fiscal Period" SortExpression="Fiscal_Period">
 									<ItemTemplate>
 										<asp:Label id="lblFiscalPeriod" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Fiscal_Period") %>'>
 										</asp:Label>
@@ -61,9 +61,9 @@
 									</EditItemTemplate>
 								</asp:TemplateColumn>
 								<asp:BoundColumn DataField="Acct_Code" HeaderText="Account Code" SortExpression="Acct_Code"></asp:BoundColumn>
-								<asp:BoundColumn DataField="Acct_Desc" HeaderText="Account Description"></asp:BoundColumn>
-								<asp:BoundColumn DataField="Activity_Code" HeaderText="Activity"></asp:BoundColumn>
-								<asp:TemplateColumn HeaderText="Purchase Order #">
+								<asp:BoundColumn DataField="Acct_Desc" HeaderText="Account Description" SortExpression="Acct_Desc"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Activity_Code" HeaderText="Activity" SortExpression="Activity_Code"></asp:BoundColumn>
+								<asp:TemplateColumn HeaderText="Purchase Order #" SortExpression="Purchase_Order">
 									<ItemTemplate>
 										<asp:Label id="lblPurchaseOrder" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Purchase_Order") %>'>
 										</asp:Label>
@@ -73,18 +73,18 @@
 										</asp:TextBox>
 									</EditItemTemplate>
 								</asp:TemplateColumn>
-								<asp:BoundColumn DataField="Reference_Number" HeaderText="Reference" Visible="False"></asp:BoundColumn>
-								<asp:BoundColumn DataField="Reporting_ID" HeaderText="Finance Reference"></asp:BoundColumn>
-								<asp:BoundColumn DataField="Reporting_Comment" HeaderText="Reporting Comment"></asp:BoundColumn>
-								<asp:BoundColumn DataField="Jounal_Line_Ref" HeaderText="Journal Line Ref"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Reference_Number" HeaderText="Reference" Visible="False" SortExpression="Reference_Number"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Reporting_ID" HeaderText="Finance Reference" SortExpression="Reporting_ID"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Reporting_Comment" HeaderText="Reporting Comment" SortExpression="Reporting_Comment"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Jounal_Line_Ref" HeaderText="Journal Line Ref" SortExpression="Jounal_Line_Ref"></asp:BoundColumn>
 								<asp:TemplateColumn HeaderText="Journal Date" SortExpression="Journal_Date">
 									<ItemTemplate>
 										<asp:Label ID="lblJournalDate" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Purchase_Order") %>'></asp:Label>
 									</ItemTemplate>
 								</asp:TemplateColumn>
-								<asp:BoundColumn DataField="Source" HeaderText="Source"></asp:BoundColumn>
+								<asp:BoundColumn DataField="Source" HeaderText="Source" SortExpression="Source"></asp:BoundColumn>
 								<asp:BoundColumn DataField="OPR_Desc" HeaderText="OPR Desc" Visible="False"></asp:BoundColumn>
-								<asp:TemplateColumn HeaderText="Actual&lt;br&gt;($)">
+								<asp:TemplateColumn HeaderText="Actual&lt;br&gt;($)" SortExpression="Amount">
 									<ItemStyle HorizontalAlign="Right"></ItemStyle>
 									<ItemTemplate>
 										<asp:Label id="lblActual" runat="server"></asp:Label>
@@ -93,7 +93,7 @@
 										<asp:TextBox id="TextBox1" runat="server"></asp:TextBox>
 									</EditItemTemplate>
 								</asp:TemplateColumn>
-								<asp:TemplateColumn HeaderText="Encumbrances&lt;br&gt;($)">
+								<asp:TemplateColumn HeaderText="Encumbrances&lt;br&gt;($)" SortExpression="Encumbrances">
 									<ItemStyle HorizontalAlign="Right"></ItemStyle>
 									<ItemTemplate>
 										<asp:Label id="lblEncumbrance" runat="server" Text='<%# DataBinder.Eval(Container, "DataItem.Encumbrances") %>'>

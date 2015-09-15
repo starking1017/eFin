@@ -93,7 +93,7 @@ Partial Class Forms_Researcher_frm_ProjectSummaryByAccount
         arrParams.Add(endDate)
         arrParams.Add(HeaderControl.GetProjectID)
 
-        dt = BLL.ProjectSummaryByAccount.LoadProjectSummaryByAccount("SELECT", "dbo.eFinsp_LoadSummaryByAccountListsWithSecurity", arrParams)
+        dt = BLL.ProjectSummaryByAccount.LoadProjectSummaryByAccount("SELECT", "dbo.eFinsp_LoadSummaryByAccountListsWithSecurity_1", arrParams)
 
         If Not dt Is Nothing Then
             Me.dgProjects.DataSource = dt

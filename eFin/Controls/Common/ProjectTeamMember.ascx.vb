@@ -29,7 +29,7 @@ Partial Class Controls_ProjectTeamMember
 
         arrParams.Add(strCPID)
 
-        dt = BLL.ProjectTeamMembers.LoadProjectTeamMembers("SELECT", "dbo.eFinsp_LoadProjectTeamMembers", arrParams)
+        dt = BLL.ProjectTeamMembers.LoadProjectTeamMembers("SELECT", "dbo.eFinsp_LoadProjectTeamMembers_1", arrParams)
 
         If Not dt Is Nothing Then
 

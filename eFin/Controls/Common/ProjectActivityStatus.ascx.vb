@@ -26,7 +26,7 @@ Partial Class Controls_ProjectActivityStatus
                 Dim objProjectStatus As New BLL.Status.ProjectHeader
 
                 ' Retrieve project header and assign values to the controls
-                If objProjectStatus.LoadProjectHeader("SELECT", "dbo.eFinsp_LoadProjectStatus", arrParams) = True Then
+                If objProjectStatus.LoadProjectHeader("SELECT", "dbo.eFinsp_LoadProjectStatus_1", arrParams) = True Then
                     Select Case objProjectStatus.ProjectStatus.Trim
                         Case "A"
                             Me.lblProjectStatus.Text = "Active"

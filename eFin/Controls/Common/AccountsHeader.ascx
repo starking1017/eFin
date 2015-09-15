@@ -54,7 +54,7 @@
 					<TR>
 					     <TD vAlign="middle" noWrap align="center" >
 						    Projet Year:
-							<asp:dropdownlist id="ddlProjectYear" runat="server" AutoPostBack="True" OnClientClick="ShowProgressBar();"></asp:dropdownlist>
+							<asp:dropdownlist id="ddlProjectYear" runat="server" AutoPostBack="True" onchange="ShowProgressBar();"></asp:dropdownlist>
 						</TD>
 						<TD style="HEIGHT: 21px" noWrap>
 							<P align="center">
